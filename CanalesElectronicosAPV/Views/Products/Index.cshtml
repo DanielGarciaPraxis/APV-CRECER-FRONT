@@ -1,0 +1,347 @@
+﻿@{
+    ViewData["Title"] = "Products";
+}
+<div>
+    @*<div class="container">*@
+    <div class="row">
+        <div class="col-md-3">
+            <h4 class="Seleccionar">
+                Seleccionar Fondo:
+            </h4>
+        </div>
+        <div class="col-md-6">
+            <div class="dropdown">
+                <button class="dropdown-toggle select-fondo form-control" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    FONDO CRECER BALANCEADO
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <nav>
+            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                <button class="nav-link " id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-products" type="button" role="tab" aria-controls="nav-home" aria-selected="false">PRODUCTOS</button>
+                <button class="nav-link " id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-obj" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">OBJETIVOS Y BENEFICIARIOS</button>
+                <button class="nav-link active active-custom" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-cuentas" type="button" role="tab" aria-controls="nav-contact" aria-selected="true">CUENTAS BANCARIAS</button>
+                <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-saldos" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">SALDOS Y MOVIMIENTOS</button>
+            </div>
+        </nav>
+        <div class="tab-content" id="nav-tabContent">
+            <div class="tab-pane fade" id="nav-products" role="tabpanel" aria-labelledby="nav-home-tab">
+                <br />
+                <br />
+                <div class="row">
+                    <div class="col">
+                        <div class="dropdown">
+                            <button class="dropdown-toggle select-fondo form-control" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Seleccione plan
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <br />
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr class="text-center" style="background-color: #7a6855 !important; color: white;">
+                                <td class="text-center">LÍNEA DE PRODUCTO</td>
+                                <td class="text-center">PRODUCTO</td>
+                                <td class="text-center">ESTADO DEL AFILIADO EN EL PRODUCTO</td>
+                                <td class="text-center">SALDOS</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="text-center TextDarkBold">AHORRO PREVISIONAL VOLUNTARIO CRECER BALANCEADO </td>
+                                <td class="text-center TextDarkBold">1 PLAN INDIVIDUAL - DINÁMICO </td>
+                                <td class="text-center TextDarkBold">ACTIVO </td>
+                                <td class="text-center TextDarkBold">$00.00 </td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr clas="TextDarkBold" style="background-color: #c7c9c7;">
+                                <td class="TextDarkBold" colspan="3">Totales </td>
+                                <td class="TextDarkBold text-center">$00.00 </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="nav-obj" role="tabpanel" aria-labelledby="nav-profile-tab">
+                <br />
+                <br />
+                <h2 class="TextCafeOscuroNegrita">OBJETIVOS</h2>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-header TextWhite">
+                                LIBERTAD FINANCIERA
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-3 TextDark">NOMBRE:</div>
+                                    <div class="col-md-9 TextDarkBold">LIBERTAD FINANCIERA</div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3 TextDark">TIPO:</div>
+                                    <div class="col-md-9 TextDarkBold">INVERSIÓN</div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3 TextDark">FECHA META:</div>
+                                    <div class="col-md-9 TextDarkBold">08/2026</div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3 TextDark">VALOR META:</div>
+                                    <div class="col-md-9 TextDarkBold">$25,000.00</div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3 TextDark">SALDO TOTAL:</div>
+                                    <div class="col-md-9 TextDarkBold">$1,023.63</div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-header TextWhite">
+                                JUBILACIÓN ANTICIPADA
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-3 TextDark">NOMBRE:</div>
+                                    <div class="col-md-9 TextDarkBold">JUBILACIÓN ANTICIPADA</div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3 TextDark">TIPO:</div>
+                                    <div class="col-md-9 TextDarkBold">PENSIÓN</div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3 TextDark">FECHA META:</div>
+                                    <div class="col-md-9 TextDarkBold">08/2026</div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3 TextDark">VALOR META:</div>
+                                    <div class="col-md-9 TextDarkBold">$50,000.00</div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3 TextDark">SALDO TOTAL:</div>
+                                    <div class="col-md-9 TextDarkBold">$1,023.63</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <br />
+                <h2 class="TextCafeOscuroNegrita">DISTRIBUCIÓN DE APORTES</h2>
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr class="text-center" style="background-color: #7a6855 !important; color: white;">
+                                <td class="text-center">OBJETIVO</td>
+                                <td class="text-center">CONSIGNACIÓN DIRECTA</td>
+                                <td class="text-center">DEDUCCIÓN DE NÓMINA</td>
+                                <td class="text-center">DÉBITO AUTOMATICO</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="text-center TextDarkBold">LIBERTAD FINANCIERA</td>
+                                <td class="text-center TextDarkBold">50%</td>
+                                <td class="text-center TextDarkBold">50%</td>
+                                <td class="text-center TextDarkBold">%</td>
+                            </tr>
+                            <tr>
+                                <td class="text-center TextDarkBold">JUBILACIÓN ANTICIPADA</td>
+                                <td class="text-center TextDarkBold">50%</td>
+                                <td class="text-center TextDarkBold">50%</td>
+                                <td class="text-center TextDarkBold">%</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr style="background-color: #c7c9c7;">
+                                <td class="text-center TextDarkBold">Total</td>
+                                <td class="text-center TextDarkBold">100%</td>
+                                <td class="text-center TextDarkBold">100%</td>
+                                <td class="text-center TextDarkBold">%</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+                <br />
+                <h2 class="TextCafeOscuroNegrita">BENEFICIARIOS</h2>
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr class="text-center" style="background-color: #7a6855 !important; color: white;">
+                                <td class="text-center">NOMBRE</td>
+                                <td class="text-center">PARENTESCO</td>
+                                <td class="text-center">FECHA DE NACIMIENTO</td>
+                                <td class="text-center">SEXO</td>
+                                <td class="text-center">PORCENTAJE</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="text-center  TextDarkBold">OBED ISAI QUIJADA DURAN</td>
+                                <td class="text-center  TextDarkBold">XXXX</td>
+                                <td class="text-center  TextDarkBold">XX/XX/XX</td>
+                                <td class="text-center  TextDarkBold">XXXX</td>
+                                <td class="text-center  TextDarkBold">%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+            <div class="tab-pane fade show active" id="nav-cuentas" role="tabpanel" aria-labelledby="nav-contact-tab">
+                <br />
+                <br />
+                <h2 class="TextCafeOscuroNegrita">CUENTAS BANCARIAS</h2>
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr class="text-center" style="background-color: #7a6855 !important; color: white;">
+                                <td class="text-center">ENTIDAD FINANCIERA</td>
+                                <td class="text-center">TIPO DE CUENTABANCARIA</td>
+                                <td class="text-center">PROPÓSITO DE LA CUENTA BANCARIA</td>
+                                <td class="text-center">NÚMERO DE LA CUENTA BANCARIA</td>
+                                <td class="text-center">TIPO DE IDENTIFICACIÓN DEL CLIENTE TITULAR</td>
+                                <td class="text-center">NÚMERO DE IDENTIFICACIÓN DEL CLIENTE TITULAR</td>
+                                <td class="text-center">CUENTA PREFERIDA</td>
+                                <td class="text-center">ESTADO DE LA CUENTA EN AFP</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="text-center  TextDarkBold">BANCO PROMERICA S.A</td>
+                                <td class="text-center  TextDarkBold">CORRIENTE</td>
+                                <td class="text-center  TextDarkBold">PAGO</td>
+                                <td class="text-center  TextDarkBold">XXXXXXXXXXXXX</td>
+                                <td class="text-center  TextDarkBold">DOCUMENTO ÚNICO DE IDENTIFICACIÓN</td>
+                                <td class="text-center  TextDarkBold">XXXXXXXX</td>
+                                <td class="text-center  TextDarkBold">NO</td>
+                                <td class="text-center  TextDarkBold">ACTIVA</td>
+                            </tr>
+                            <tr>
+                                <td class="text-center  TextDarkBold">BANCO PROMERICA S.A</td>
+                                <td class="text-center  TextDarkBold">CORRIENTE</td>
+                                <td class="text-center  TextDarkBold">PAGO</td>
+                                <td class="text-center  TextDarkBold">XXXXXXXXXXXXX</td>
+                                <td class="text-center  TextDarkBold">DOCUMENTO ÚNICO DE IDENTIFICACIÓN</td>
+                                <td class="text-center  TextDarkBold">XXXXXXXX</td>
+                                <td class="text-center  TextDarkBold">NO</td>
+                                <td class="text-center  TextDarkBold">ACTIVA</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="nav-saldos" role="tabpanel" aria-labelledby="nav-contact-tab">
+                <br />
+                <br />
+                <div class="row">
+                    <div class="col">
+                        <div class="dropdown">
+                            <button class="dropdown-toggle select-fondo form-control" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Seleccione plan
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <br />
+                <h2 class="TextCafeOscuroNegrita">SALDO TOTAL</h2>
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr class="text-center" style="background-color: #7a6855 !important; color: white;">
+                                <td class="text-center"></td>
+                                <td class="text-center">NÚMERO CUENTA</td>
+                                <td class="text-center">TIPO AHORRO OBJETIVO</td>
+                                <td class="text-center">NOMBRE CUENTA</td>
+                                <td class="text-center">SALDO EN DOLARES</td>
+                                <td class="text-center">SALDO EN UNIDADES</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="text-center TextDarkBold"><input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"></td>
+                                <td class="text-center TextDarkBold"></td>
+                                <td class="text-center TextDarkBold"></td>
+                                <td class="text-center TextDarkBold"></td>
+                                <td class="text-center TextDarkBold">00.00</td>
+                                <td class="text-center TextDarkBold">00.0000000</td>
+                            </tr>
+                            <tr>
+                                <td class="text-center TextDarkBold"><input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"></td>
+                                <td class="text-center TextDarkBold"></td>
+                                <td class="text-center TextDarkBold"></td>
+                                <td class="text-center TextDarkBold"></td>
+                                <td class="text-center TextDarkBold">00.00</td>
+                                <td class="text-center TextDarkBold">00.0000000</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr clas="TextDarkBold" style="background-color: #c7c9c7;">
+                                <td class="TextDarkBold" colspan="4">Totales</td>
+                                <td class="TextDarkBold text-center">00.00</td>
+                                <td class="TextDarkBold text-center">00.0000000</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+                <br />
+                <br />
+                <h2 class="TextCafeOscuroNegrita">SALDO TOTAL</h2>
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr class="text-center" style="background-color: #7a6855 !important; color: white;">
+                                <td class="text-center">FECHA DE MOVIMIENTO</td>
+                                <td class="text-center">NOMBRE DEL OBJETIVO DE AHORRO</td>
+                                <td class="text-center">
+                                    TIPO DE
+                                    MOVIMIENTO
+                                </td>
+                                <td class="text-center">
+                                    VALOR DE
+                                    MOVIMIENTO
+                                </td>
+                                <td class="text-center">
+                                    VALOR CUOTA DE LA
+                                    FECHA DEL MOVIMIENTO
+                                </td>
+                                <td class="text-center">
+                                    UNIDADES
+                                    COMPRADAS/RETIRADAS
+                                </td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="text-center TextDarkBold">DD/MM/YY</td>
+                                <td class="text-center TextDarkBold">AHORRO</td>
+                                <td class="text-center TextDarkBold">ACREDITACIÓN</td>
+                                <td class="text-center TextDarkBold">$00.00</td>
+                                <td class="text-center TextDarkBold">0000.00000000</td>
+                                <td class="text-center TextDarkBold">0000.00000000</td>
+                            </tr>
+                            <tr>
+                                <td class="text-center TextDarkBold">DD/MM/YY</td>
+                                <td class="text-center TextDarkBold">AHORRO</td>
+                                <td class="text-center TextDarkBold">ACREDITACIÓN</td>
+                                <td class="text-center TextDarkBold">$00.00</td>
+                                <td class="text-center TextDarkBold">0000.00000000</td>
+                                <td class="text-center TextDarkBold">0000.00000000</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

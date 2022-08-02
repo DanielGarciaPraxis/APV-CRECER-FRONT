@@ -1,0 +1,7 @@
+version: '3.4'
+
+services:
+  clientesapv.webapi:
+    image: ${STAGING_CLIENTESAPV_REGISTRY}:${STAGING_CLIENTESAPV_TAG}
+  clientesapv.backgroundtask:
+    image: ${STAGING_CLIENTESAPV_REGISTRY}:${STAGING_CLIENTESAPV_BACKGROUNDTASK_TAG}

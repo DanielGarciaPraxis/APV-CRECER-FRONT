@@ -1,0 +1,31 @@
+﻿.Login{
+  margin-top:140px;
+ /*width:-50px;*/
+}
+.InicioSesion {
+    font-family: Barlow;
+    font-weight: bold;
+    color: #0033A0;
+}
+.Documento{
+    text-align:center;
+}   
+.Boton-Ingreso {
+    font-family: Barlow;
+    font-weight: bold;
+    background-color: #7A6855;
+    color:white;
+    width:100%;
+    /*width:235px;*/
+}
+.Img {
+    left:0;
+    /*top:0;*/
+    height:100%;
+    width:46vh;
+    bottom:0;
+    position:fixed;
+}
+.no-border{
+    padding-left:0;
+}

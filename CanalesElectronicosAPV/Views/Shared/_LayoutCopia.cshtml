@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - CanalesElectronicosAPV</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/fontawesome.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link rel="stylesheet" href="~/CanalesElectronicosAPV.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <div class="container-fluid">
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid justify-content-lg-start">
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <a class="navbar-brand" href="#">
+                    <h1 class="Barlow_Bold">Crecer</h1>
+                </a>
+
+                <div class="split-vertical d-none d-md-block"></div>
+                <div class="navbar-nav d-none d-md-block">
+                    <span class="Barlow_Medium ms-3">Crecer en Línea</span>
+                </div>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="far fa-address-card"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="row ms-auto">
+                    <div class="col-12">
+                        <ul class="nav justify-content-end">
+                            <li class="nav-item">
+                                <button class="btn btn-link Sesion" type="button">Cerrar sesión</button>
+
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-12">
+                        <ul class="nav justify-content-end">
+                            <li class="nav-item">
+                                <span class="Barlow_Regular">Bienvenido(a)</span>
+                                <span class="Nombre">Edith Corina Rodríguez</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-12 ">
+                        <ul class="nav justify-content-end ">
+                            <li class="nav-item">
+                                <span class="Fecha">Último ingreso: 30/07/2021 02:04 P.M.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-12">
+                        <ul class="nav justify-content-end">
+                            <li class="nav-item">
+                                <span class="Border-Ahorro">AHORRO MANDATORIO</span>
+                                <i class="fa-solid fa-circle-info Icono"></i>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </nav>
+        <div class="container-fluid line-split"></div>
+        <div class="collapse d-lg-none menu-small" id="navbarToggleExternalContent">
+            <nav class="links-menu">
+                <a class="nav-link active links-menu Inicio" style="color:white;" href="#">INICIO</a>
+                <a class="nav-link links-menu" style="color:white;" href="#">DATOS DEL CLIENTE</a>
+                <a class="nav-link links-menu" style="color:white;" href="#">PRODUCTOS</a>
+                <a class="nav-link links-menu" style="color:white;" href="#">SERVICIOS</a>
+                <a class="nav-link links-menu" style="color:white" href="#">CONTÁCTANOS</a>
+            </nav>
+
+
+        </div>
+        <div class="row">
+            <div class="col-lg-2">
+                <div class=" menu d-sm-none d-md-none d-none d-lg-block">
+                    <nav class="nav flex-column">
+                        <div class="links-menu">
+                            <a class="nav-link active links-menu Inicio" style="color:white;" href="#">INICIO</a>
+                            <a class="nav-link links-menu" style="color:white;" href="#">DATOS DEL CLIENTE</a>
+                            <a class="nav-link links-menu" style="color:white;" href="#">PRODUCTOS</a>
+                            <a class="nav-link links-menu" style="color:white;" href="#">SERVICIOS</a>
+                            <a class="nav-link links-menu" style="color:white" href="#">CONTÁCTANOS</a>
+                        </div>
+                    </nav>
+                </div>
+
+
+
+            </div>
+
+            <div class="col-lg-8 offset-lg-1">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+    <br />
+
+
+
+
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

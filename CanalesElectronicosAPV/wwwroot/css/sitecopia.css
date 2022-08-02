@@ -1,0 +1,266 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,400;1,100&display=swap');
+
+
+label {
+    font-family: "Barlow";
+}
+
+.Barlow_Medium {
+    font-family: Barlow;
+    font-weight: bold;
+    color: #3FD4F9;
+}
+
+.Inicio {
+    font-weight: bold
+}
+
+.Barlow_Regular {
+    font-family: Barlow;
+    color: #1B63CB;
+    font: weight 500px;
+}
+
+.Barlow_Bold {
+    font-family: Barlow;
+    color: #1B63CB;
+    font-weight: bold;
+    font-size: 50px;
+}
+
+.Label {
+    font-family: Barlow;
+    font-weight: lighter;
+}
+
+.label-x-large {
+    font-size: x-large;
+}
+
+.Nombre {
+    font-family: Barlow;
+    color: #1B63CB;
+    font-weight: bold;
+    width: 40px;
+}
+
+.Sesion {
+    font-family: Barlow;
+    font-weight: lighter;
+}
+
+.Seleccionar {
+    font-family: Barlow;
+    font-weight: bold;
+    color: #7A6855;
+}
+
+.Fecha {
+    font-family: Barlow;
+    font-weight: lighter;
+}
+
+.Icono {
+    color: #7A6855;
+    width: 20px;
+    font-size: 20px;
+}
+
+.links-menu {
+    color: white;
+    position: relative;
+    margin-bottom: 20px;
+    font-size: 19px;
+}
+
+    .links-menu:first-child {
+        margin-top: 15px;
+    }
+
+.nav-link {
+    padding-bottom: 0px;
+}
+
+.links-menu a:hover::after {
+    content: "";
+    position: absolute;
+    left: 3%;
+    right: 20%;
+    bottom: 0;
+    border-top: 4px solid #7A6855;
+}
+
+.menu {
+    top: 140px;
+    position: fixed;
+    height: 100%;
+    background-color: #A39382;
+    font-family: Barlow;
+    width: 20%;
+    font-weight: lighter;
+}
+
+.menu-small {
+    background-color: #A39382;
+    height: 100%;
+    font-family: Barlow;
+    font-weight: lighter;
+}
+.paddingRows{
+    padding-bottom:15px;
+}
+.seccion-item {
+    background-color: #C7C9C7;
+    border-radius: 5px;
+    color: #7A6855;
+    font-size: 17px;
+    /*font-weight: bold;*/
+    margin-bottom: 20px;
+    padding: 4px 4px 4px 13px;
+}
+
+.seccion-item-row-color {
+    background-color: #C7C9C7;
+    
+}
+
+.margin-content-principal {
+    margin-top: 60px;
+    font-family: Borlow;
+    font-weight: bolder;
+}
+
+.margin-content-seccion {
+    margin-top: 50px;
+    font-family: Barlow;
+    font-weight: bold;
+}
+
+.line-split {
+    background-color: darkcyan;
+    padding: 4px;
+    width: 100%;
+}
+
+.split-vertical {
+    background-color: #3FD4F9;
+    padding: 1px;
+    width: 1px;
+    height: 60px;
+}
+
+.select-fondo {
+    background-color: #7A6855;
+    border-radius: 0%;
+    color: white;
+    font-family: Barlow;
+    font-weight: 700;
+}
+
+.Border-Ahorro {
+    background-color: #C7C9C7;
+    border-radius: 10px;
+    color: white;
+    padding: 4px;
+    height: 9px;
+    width: 10px;
+    font-family: Barlow;
+    font-weight: lighter;
+}
+
+/*.Informacion {
+    background-color: #7A6855;
+    border-radius: 0%;
+    color: white;
+    width: auto;
+    font-weight: 700;
+}*/
+.Informacion {
+    padding: 5px 15px 5px 15px;
+    background-color: #7A6855;
+    /* border-radius: 0%; */
+    color: white;
+    /* width: auto; */
+    font-weight: bold;
+    font-size: x-large;
+    text-align: center;
+}
+
+.Encabezados {
+    background-color: white;
+    color: #A39382;
+}
+
+html, body {
+    height: 100%;
+}
+
+
+/*estilos ivan 'Barlow'*/
+.TextSilver {
+    /*color: #C7C9C7;*/
+    color: #53565A
+}
+.TextCafe {
+    color: #A39382;
+    font-size: x-large;
+}
+.TextCafeOscuro {
+    color: #7A6855;
+    font-size: x-large;
+}
+
+.TextCafeOscuroNegrita {
+    color: #7A6855;
+    font-weight: bold;
+}
+
+.TextDark {
+    /*font-family: sans-serif;*/
+    /*font-family: 'Barlow';*/
+    color: #53565A;
+}
+
+.TextDark-small {
+    /*font-family: sans-serif;*/
+    /*font-family: 'Barlow';*/
+    font-size: small;
+    color: #53565A;
+}
+
+.TextWhite {
+    color: white;
+}
+
+.TextDarkBold {
+    /*font-family: Algerian;*/
+    color: #53565A;
+    font-weight: bold;
+}
+
+.MarginBasic {
+    margin-bottom: 15px;
+}
+
+.nav-link {
+    color: white !important;
+    background-color: #A39382 !important;
+}
+
+.active-custom {
+    color: white !important;
+    background-color: #7A6855 !important;
+}
+
+.nav-tabs .nav-link {
+    border-top-left-radius: 0rem;
+    border-top-right-radius: 2rem;
+}
+
+.card-header {
+    text-align: center;
+    background-color: #7a6855;
+}
+/*fin estilos ivan*/

@@ -1,0 +1,26 @@
+#See https://aka.ms/containerfastmode to understand how Visual Studio uses this Dockerfile to build your images for faster debugging.
+
+FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS base
+WORKDIR /app
+EXPOSE 80
+EXPOSE 443
+
+FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
+WORKDIR /src
+COPY ["CanalesElectronicosAPV/CanalesElectronicosAPV.csproj", "CanalesElectronicosAPV/"]
+COPY ["CanalesElectronicosAPV/CanalesElectronicosAPV.Core.csproj", "CanalesElectronicosAPV.Core/"]
+COPY ["CanalesElectronicosAPV/CanalesElectronicosAPV.Infrastructure.csproj", "CanalasElectronicosAPV.Infrastructure/"]
+COPY ["CanalesElectronicosApv/CanalesElectronicosAPV.Domain.csproj", "CanalesElectronicosAPV.Domain/"]
+RUN dotnet restore "CanalesElectronicosAPV/CanalesElectronicosAPV.csproj" --configfile nuget.config
+
+COPY . .
+WORKDIR "/src/CanalesElectronicosAPV"
+RUN dotnet build "CanalesElectronicosAPV.csproj" -c Release -o /app/build
+
+FROM build AS publish
+RUN dotnet publish "CanalesElectronicosAPV.csproj" -c Release -o /app/publish
+
+FROM base AS final
+WORKDIR /app
+COPY --from=publish /app/publish .
+ENTRYPOINT ["dotnet", "CanalesElectronicosAPV.dll"]

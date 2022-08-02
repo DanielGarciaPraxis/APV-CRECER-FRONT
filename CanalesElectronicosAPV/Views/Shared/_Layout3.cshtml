@@ -1,0 +1,282 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - testproject</title>
+    <!--Morris Chart CSS -->
+    <link rel="stylesheet" href="~/css/morris.css">
+
+    @*<link href="~/css/bootstrap.min.css" rel="stylesheet" />*@
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/css/metismenu.css" rel="stylesheet" type="text/css">
+    <link href="~/css/icons.css" rel="stylesheet" type="text/css">
+    <link href="~/css/style.css" rel="stylesheet" type="text/css">
+    <link href="~/css/site.css" rel="stylesheet" type="text/css">
+
+    <!-- jQuery  -->
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="~/lib/js/metismenu.js"></script>
+    @*<script src="~/lib/js/jquery.slimscroll.js"></script>
+        <script src="~/lib/js/waves.js"></script>*@
+    <!--Morris Chart-->
+    @*<script src="~/lib/js/morris.min.js"></script>
+        <script src="~/lib/js/raphael.min.js"></script>
+        <script src="~/lib/js/dashboard.init.js"></script>*@
+    <!-- App js -->
+    @*<script src="~/lib/js/app.js"></script>*@
+</head>
+<body>
+    <!-- Begin page -->
+    <div id="wrapper">
+
+        <!-- Top Bar Start -->
+        <div class="topbar">
+
+            <!-- LOGO -->
+            <div class="topbar-left">
+                <a href="#" class="logo">
+                    <span class="logo-light">
+                        @*<i class="mdi mdi-camera-control"></i>*@ Jassa
+                    </span>
+                    @*<span class="logo-sm">
+                    <i class="mdi mdi-camera-control"></i>
+                </span>*@
+                </a>
+            </div>
+            <nav class="navbar-custom">
+                <ul class="navbar-right list-inline float-end mb-0">
+
+                    <!-- user data-->
+                    <li class="dropdown notification-list d-none d-md-inline-block"></li>
+                    <li class="dropdown notification-list list-group-horizontal-md d-none d-md-inline-block">
+                        <div class="row">
+                            <div class="col text-end"><span>Cerrar sesión</span></div>
+                        </div>
+                        <div class="row">
+                            <span class="Barlow_Regular">Bienvenido(a)</span>
+                            <span class="Nombre">Edith Corina Rodríguez</span>
+                        </div>
+                        <div class="row">
+                            <div class="col text-end"><span>último ingreso: 30/07/2021 02:04 P.M.</span></div>
+                        </div>
+                        <div class="row">
+                            <div class="col text-end"><span>AHORRO MANDATORIO</span></div>
+                        </div>
+                        <div class="row">
+                            <div class="col text-end"></div>
+                        </div>
+                    </li>
+                </ul>
+
+                <ul class="list-inline dropdown-menu-end mb-0">
+                    <li class="float-end">
+                        <button class="button-menu-mobile open-left waves-effect">
+                            <i class="mdi mdi-menu"></i>
+                        </button>
+                    </li>
+                    @*<li class="d-none d-md-inline-block">
+                    <form role="search" class="app-search">
+                        <div class="form-group mb-0">
+                            <input type="text" class="form-control" placeholder="Search..">
+                            <button type="submit"><i class="fa fa-search"></i></button>
+                        </div>
+                    </form>
+                </li>*@
+                    <li class="d-none d-md-inline-block">
+                        <div class="split-vertical d-none d-md-block"></div>
+                        <div class="app-search">
+                            <span class="Barlow_Medium ms-3">Crecer en Línea</span>
+                        </div>
+                    </li>
+                </ul>
+
+            </nav>
+
+        </div>
+        <!-- Top Bar End -->
+        <!-- ========== Left Sidebar Start ========== -->
+        <div class="left side-menu">
+            <div class="slimscroll-menu" id="remove-scroll">
+
+                <!--- Sidemenu -->
+                <div id="sidebar-menu">
+                    <!-- Left Menu Start -->
+                    <ul class="metismenu" id="side-menu">
+                        <li class="menu-title">Menu</li>
+                        <li>
+                            <a href="#" class="waves-effect">
+                                <i class="icon-accelerator"></i><span class="badge badge-success badge-pill float-end">9+</span> <span> Dashboard </span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="javascript:void(0);" class="waves-effect"><i class="icon-mail-open"></i><span> Email <span class="float-end menu-arrow"><i class="mdi mdi-chevron-right"></i></span> </span></a>
+                            <ul class="submenu">
+                                <li><a href="#">Inbox</a></li>
+                                <li><a href="#">Email Read</a></li>
+                                <li><a href="#">Email Compose</a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="calendar.html" class="waves-effect"><i class="icon-calendar"></i><span> Calendar </span></a>
+                        </li>
+
+                        <li>
+                            <a href="javascript:void(0);" class="waves-effect"><i class="icon-paper-sheet"></i><span> Pages <span class="float-end menu-arrow"><i class="mdi mdi-chevron-right"></i></span> </span></a>
+                            <ul class="submenu">
+                                <li><a href="#">Pricing</a></li>
+                                <li><a href="#">Invoice</a></li>
+                                <li><a href="#">Timeline</a></li>
+                                <li><a href="#">FAQs</a></li>
+                                <li><a href="#">Maintenance</a></li>
+                                <li><a href="#">Coming Soon</a></li>
+                                <li><a href="#">Starter Page</a></li>
+                                <li><a href="#">Login</a></li>
+                                <li><a href="#">Register</a></li>
+                                <li><a href="#">Recover Password</a></li>
+                                <li><a href="#">Lock Screen</a></li>
+                                <li><a href="#">Error 404</a></li>
+                                <li><a href="#">Error 500</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="menu-title">Components</li>
+
+                        <li>
+                            <a href="javascript:void(0);" class="waves-effect"><i class="icon-pencil-ruler"></i> <span> UI Elements <span class="float-end menu-arrow"><i class="mdi mdi-chevron-right"></i></span> </span> </a>
+                            <ul class="submenu">
+                                <li><a href="#">Alerts</a></li>
+                                <li><a href="#">Badge</a></li>
+
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="javascript:void(0);" class="waves-effect"><i class="icon-diamond"></i> <span> Advanced UI <span class="float-end menu-arrow"><i class="mdi mdi-chevron-right"></i></span> </span> </a>
+                            <ul class="submenu">
+                                <li><a href="#">Alertify</a></li>
+                                <li><a href="#">Rating</a></li>
+
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="javascript:void(0);" class="waves-effect"><i class="icon-todolist-check"></i><span> Forms <span class="badge badge-pill badge-danger float-end">8</span> </span></a>
+                            <ul class="submenu">
+                                <li><a href="#">Form Elements</a></li>
+                                <li><a href="#">Form Validation</a></li>
+
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="javascript:void(0);" class="waves-effect"><i class="icon-graph"></i><span> Charts <span class="float-end menu-arrow"><i class="mdi mdi-chevron-right"></i></span> </span></a>
+                            <ul class="submenu">
+                                <li><a href="#">Morris Chart</a></li>
+                                <li><a href="#">Chartist Chart</a></li>
+                                <li><a href="#">Chartjs Chart</a></li>
+                                <li><a href="#">Flot Chart</a></li>
+                                <li><a href="#">C3 Chart</a></li>
+                                <li><a href="#">Jquery Knob Chart</a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="javascript:void(0);" class="waves-effect"><i class="icon-spread"></i><span> Tables <span class="float-end menu-arrow"><i class="mdi mdi-chevron-right"></i></span> </span></a>
+                            <ul class="submenu">
+                                <li><a href="#">Basic Tables</a></li>
+                                <li><a href="#">Data Table</a></li>
+
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="javascript:void(0);" class="waves-effect"><i class="icon-coffee"></i> <span> Icons  <span class="float-end menu-arrow"><i class="mdi mdi-chevron-right"></i></span></span> </a>
+                            <ul class="submenu">
+                                <li><a href="#">Material Design</a></li>
+                                <li><a href="#">Font Awesome</a></li>
+
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="javascript:void(0);" class="waves-effect"><i class="icon-map"></i><span> Maps <span class="float-end menu-arrow"><i class="mdi mdi-chevron-right"></i></span> </span></a>
+                            <ul class="submenu">
+                                <li><a href="#"> Google Map</a></li>
+                                <li><a href="#"> Vector Map</a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="javascript:void(0);" class="waves-effect"><i class="icon-share"></i><span> Multi Level <span class="float-end menu-arrow"><i class="mdi mdi-chevron-right"></i></span> </span></a>
+                            <ul class="submenu">
+                                <li><a href="#"> Menu 1</a></li>
+                                <li>
+                                    <a href="#">Menu 2  <span class="float-end menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
+                                    <ul class="submenu">
+                                        <li><a href="#">Menu 2.1</a></li>
+                                        <li><a href="#">Menu 2.1</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+
+                    </ul>
+
+                </div>
+                <!-- Sidebar -->
+                <div class="clearfix"></div>
+
+            </div>
+            <!-- Sidebar -left -->
+
+        </div>
+        <!-- Left Sidebar End -->
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="content-page">
+            <!-- Start content -->
+            <div class="content">
+                <div class="container-fluid">
+                    <div class="page-title-box">
+                        <div class="row align-items-center">
+                            <div class="col-sm-6">
+                                <h4 class="page-title">Dashboard 2</h4>
+                            </div>
+                            <div class="col-sm-6">
+                                <ol class="breadcrumb float-end">
+                                    <li class="breadcrumb-item"><a href="#">Jassa</a></li>
+                                    <li class="breadcrumb-item active">Dashboard</li>
+                                </ol>
+                            </div>
+                        </div>
+                        <!-- end row -->
+                    </div>
+                    <!-- end page-title -->                    
+                    @RenderBody()
+                </div>
+                <!-- container-fluid -->
+
+            </div>
+            <!-- content -->
+
+            <footer class="footer">
+                ©2021 Jassa <span class="d-none d-sm-inline-block"> - Love <i class="mdi mdi-heart text-danger"></i> by Therichpost.com</span>.
+            </footer>
+
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Right content here -->
+        <!-- ============================================================== -->
+
+    </div>
+    <!-- END wrapper -->
+    <!-- jQuery  -->
+    <
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

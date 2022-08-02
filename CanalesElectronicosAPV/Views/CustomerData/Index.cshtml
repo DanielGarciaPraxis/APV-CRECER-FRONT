@@ -1,0 +1,155 @@
+﻿@model CanalesElectronicosAPV.Core.Dto_s.Response.DatosClienteMainResponse
+@{
+    ViewData["Title"] = "Customer Data";
+}
+<br />
+<div class="row">
+    <div class="col-md-3 col-lg-4 col-xl-2">
+        <h4 class="Seleccionar">
+            Seleccionar Fondo:
+        </h4>
+    </div>
+    <div class="col-md-6">
+        <div class="dropdown">
+            <button class="dropdown-toggle select-fondo" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                FONDO CRECER BALANCEADO
+            </button>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <div class="ms-1">
+            <span class="label-x-large TextSilver">DATOS DEL CLIENTE</span>
+            <br />
+            <br />
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <h4 class="Seleccionar" style="margin-left:5px;">FICHA DE CLIENTE DE AHORRO PREVISIONAL VOLUNTARIO</h4>
+    </div>
+</div>
+<div class="row">
+    <div class="col seccion-item" style="padding: 20px;">
+        @*row-1*@
+        <div class="row paddingRows">
+            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4 col-xxl-4">
+                @*TextDarkBold">&nbsp;@Html.DisplayNameFor(model => model.Nombre)*@
+                <label class="TextDark">CLIENTE:</label><label id="clienteName" class="TextDarkBold">&nbsp;@Html.DisplayFor(model => model.NombreCompleto)</label>
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4 col-xxl-4">
+                <label class="TextDark">TIPO DE DOC. IDENTIDAD:</label><label id="tipoDoc" class="TextDarkBold">&nbsp;@Html.DisplayFor(model => model.CodigoTipoIdentificacion)</label>
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4 col-xxl-4">
+                <label class="TextDark">NIT:</label><label id="nit" class="TextDarkBold">&nbsp;@Html.DisplayFor(model => model.Nit)</label>
+            </div>
+        </div>
+        @*---fin---*@
+
+        @*row-2*@
+        <div class="row paddingRows">
+            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4 col-xxl-4">
+                <label class="TextDark">FECHA NACIMIENTO:</label><label id="fechaNac" class="TextDarkBold">&nbsp;@Html.DisplayFor(model => model.FechaNacimiento)</label>
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4 col-xxl-4">
+                <label class="TextDark">DOC. IDENTIDAD:</label><label id="docIdent" class="TextDarkBold">&nbsp;@Html.DisplayFor(model => model.NumeroIdentificacion)</label>
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4 col-xxl-4">
+                <label class="TextDark">ASESOR ASIGNADO:</label><label id="asesor" class="TextDarkBold">&nbsp;@Html.DisplayFor(model => model.NombreAsesorAsignado)</label>
+            </div>
+        </div>
+        @*---fin---*@
+        @*row-3*@
+        <div class="row paddingRows">
+            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4 col-xxl-4">
+                <label class="TextDark">NACIONALIDAD:</label><label id="nacionalidad" class="TextDarkBold">&nbsp;@Html.DisplayFor(model => model.NombreNacionalidad)</label>
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4 col-xxl-4">
+                <label class="TextDark">EXP DOCUMENTO:</label><label id="clienteName" class="TextDarkBold">&nbsp;@Html.DisplayFor(model => model.FechaExpedicionIdentificacion)</label>
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4 col-xxl-4">
+                <label class="TextDark">ANUENCIA:</label><label id="anuencia" class="TextDarkBold">&nbsp;@Html.DisplayFor(model => model.Anuencia)</label>
+            </div>
+        </div>
+        @*---fin---*@
+        @*row-4*@
+        <div class="row paddingRows">
+            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4 col-xxl-4">
+                <label class="TextDark">OCUPACIÓN:</label><label id="ocupacion" class="TextDarkBold">&nbsp;@Html.DisplayFor(model => model.NombreOcupacion)</label>
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4 col-xxl-4">
+                <label class="TextDark">VENCIMIENTO DOCUMENTO:</label><label id="vencDoc" class="TextDarkBold">&nbsp;@Html.DisplayFor(model => model.FechaVencimientoIdentificacion)</label>
+            </div>
+        </div>
+        @*---fin---*@
+        @*row-5*@
+        <div class="row paddingRows">
+            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4 col-xxl-4">
+                <label class="TextDark">ESTADO CIVIL:</label><label id="estCivil" class="TextDarkBold">&nbsp;@Html.DisplayFor(model => model.EstadoCivil)</label>
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4 col-xxl-4">
+                <label class="TextDark">PAÍS EXP. DOCUMENTO:</label><label id="paisExpDoc" class="TextDarkBold">&nbsp;@Html.DisplayFor(model => model.PaisExpedicionIdentificacion)</label>
+            </div>
+        </div>
+        @*---fin---*@
+        @*row-6*@
+        <div class="row paddingRows">
+            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4 col-xxl-4">
+                <label class="TextDark">ESTADO DEL CLIENTE:</label><label id="estadoCliente" class="TextDarkBold">&nbsp;@Html.DisplayFor(model => model.EstadoAfiliado)</label>
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4 col-xxl-4">
+                <label class="TextDark">CIUDAD EXP. DOCUMENTO:</label><label id="ciudadExpDoc" class="TextDarkBold">&nbsp;@Html.DisplayFor(model => model.CiudadExpedicionIdentificacion)</label>
+            </div>
+        </div>
+        @*---fin---*@
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <h4 class="Seleccionar" style="padding-left:5px">DATOS DE CONTACTO</h4>
+    </div>
+</div>
+<div class="row">
+    <div class="col seccion-item" style="padding: 20px;">
+        <h2 class="TextWhite">PERSONAL</h2>
+        @*row-1*@
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4 col-xxl-4">
+                <div class="row paddingRows">
+                    <div class="col"><label class="TextDark">CELULAR:</label><label id="cel" class="TextDarkBold">&nbsp;@Html.DisplayFor(model => model.PersonalNumeroCelular)</label></div>
+                </div>
+                <div class="row paddingRows">
+                    <div class="col"><label class="TextDark">TELÉFONO:</label><labe id="tel" l class="TextDarkBold">&nbsp;@Html.DisplayFor(model => model.PersonalNumeroTelefonico)</labe></div>
+                </div>
+                <div class="row paddingRows">
+                    <div class="col"><label class="TextDark">E-MAIL:</label><label id="email" class="TextDarkBold">&nbsp;@Html.DisplayFor(model => model.PersonalCorreoElectronico)</label></div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4 col-xxl-8">
+                <label class="TextDark">DIRECCIÓN:<span id="direccion" class="TextDarkBold">&nbsp;@Html.DisplayFor(model => model.PersonalDireccion)</span></label>
+            </div>
+        </div>
+        @*---fin---*@
+    </div>
+    <div class="seccion-item" style="padding: 20px;">
+        <h2 class="TextWhite">LABORAL</h2>
+        @*row-1*@
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4 col-xxl-4">
+                <div class="row paddingRows">
+                    <div class="col"><label class="TextDark">CELULAR:</label><label id="celular2" class="TextDarkBold">&nbsp;@Html.DisplayFor(model => model.LaboralNumeroCelular)</label></div>
+                </div>
+                <div class="row paddingRows">
+                    <div class="col"><label class="TextDark">TELÉFONO:</label><label id="tel2" class="TextDarkBold">&nbsp;@Html.DisplayFor(model => model.LaboralNumeroTelefonico)</label></div>
+                </div>
+                <div class="row"></div>
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4 col-xxl-8">
+                <label class="TextDark">DIRECCIÓN:<span id="dir2" class="TextDarkBold">&nbsp;@Html.DisplayFor(model => model.LaboralDireccion)</span></label>
+            </div>
+        </div>
+        @*---fin---*@
+    </div>
+</div>

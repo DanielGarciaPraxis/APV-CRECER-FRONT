@@ -1,0 +1,11 @@
+version: '3.4'
+
+services:
+  clientesapv.webapi:    
+    build:
+      context: .
+      dockerfile: CanalesElectronicosAPV/Dockerfile
+  clientesapv.backgroundtask:    
+    build:
+      context: .
+      dockerfile: CanalesElectronicosAPV.BackgroundTasks/Dockerfile
