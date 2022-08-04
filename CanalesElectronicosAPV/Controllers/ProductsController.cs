@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using CanalesElectronicosAPV.Models.DTO;
 
 namespace CanalesElectronicosAPV.Controllers
 {
@@ -8,7 +10,20 @@ namespace CanalesElectronicosAPV.Controllers
         // GET: ProductosController
         public ActionResult Index()
         {
-            return View();
+            ProductosDTO productosDTO = new ProductosDTO();
+            List<ProductsDTO> list = new List<ProductsDTO>();
+            Models.DTO.ProductsDTO p = new Models.DTO.ProductsDTO();
+            p.LineaProducto = "AHORRO PREVISIONAL VOLUNTARIO CRECER BALANCEADO";
+            p.Producto = "1 PLAN INDIVIDUAL - DINÁMIC";
+            p.Estado = "ACTIVO";
+            p.Saldo = 0;
+            list.Add(p);
+            productosDTO.Productos = list;
+            List<SelectListItem> items = new List<SelectListItem>();
+            ViewBag.items = items;
+            ViewBag.Distribucion = string.Empty;
+            ViewBag.Beneficiarios = string.Empty;
+            return View(productosDTO);
         }
 
         // GET: ProductosController/Details/5
@@ -79,5 +94,7 @@ namespace CanalesElectronicosAPV.Controllers
                 return View();
             }
         }
+
+        
     }
 }
