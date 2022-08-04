@@ -340,3 +340,12 @@ color: #fff;
 }
 
 /*fin estilos ivan*/
+
+.HeaderTable{
+    background-color: #7a6855 !important;
+    color: white;
+}
+
+.FooterTable {
+    background-color: #c7c9c7;
+}

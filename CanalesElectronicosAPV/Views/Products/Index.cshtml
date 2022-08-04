@@ -1,4 +1,6 @@
-﻿@{
+﻿@model CanalesElectronicosAPV.Models.DTO.ProductosDTO
+
+@{
     ViewData["Title"] = "Products";
 }
 <div>
@@ -33,39 +35,51 @@
                 <div class="row">
                     <div class="col">
                         <div class="dropdown">
-                            <button class="dropdown-toggle select-fondo form-control" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Seleccione plan
-                            </button>
+                            @Html.DropDownList("items",(IEnumerable<SelectListItem>)ViewBag.items,"Selecciona Plan",htmlAttributes: new{@class="form-select"})
                         </div>
                     </div>
                 </div>
                 <br />
                 <br />
                 <div class="table-responsive">
-                    <table class="table table-striped">
-                        <thead>
-                            <tr class="text-center" style="background-color: #7a6855 !important; color: white;">
-                                <td class="text-center">LÍNEA DE PRODUCTO</td>
-                                <td class="text-center">PRODUCTO</td>
-                                <td class="text-center">ESTADO DEL AFILIADO EN EL PRODUCTO</td>
-                                <td class="text-center">SALDOS</td>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="text-center TextDarkBold">AHORRO PREVISIONAL VOLUNTARIO CRECER BALANCEADO </td>
-                                <td class="text-center TextDarkBold">1 PLAN INDIVIDUAL - DINÁMICO </td>
-                                <td class="text-center TextDarkBold">ACTIVO </td>
-                                <td class="text-center TextDarkBold">$00.00 </td>
-                            </tr>
-                        </tbody>
-                        <tfoot>
-                            <tr clas="TextDarkBold" style="background-color: #c7c9c7;">
-                                <td class="TextDarkBold" colspan="3">Totales </td>
-                                <td class="TextDarkBold text-center">$00.00 </td>
-                            </tr>
-                        </tfoot>
-                    </table>
+                            <table class="table table-borderless">
+            <thead>
+                <tr class="text-center HeaderTable">
+                    <td class="text-center">LÍNEA DE PRODUCTO</td>
+                    <td class="text-center">PRODUCTO</td>
+                    <td class="text-center">ESTADO DEL AFILIADO EN EL PRODUCTO</td>
+                    <td class="text-center">SALDOS</td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Productos) {
+                    <tr>
+                        <td class="text-center TextDarkBold">
+                            @Html.DisplayFor(modelItem => item.LineaProducto)
+                        </td>
+                        <td class="text-center TextDarkBold">
+                            @Html.DisplayFor(modelItem => item.Producto)
+                        </td>
+                        <td class="text-center TextDarkBold">
+                            @Html.DisplayFor(modelItem => item.Estado)
+                        </td>
+                        <td class="text-center TextDarkBold">
+                            @Html.DisplayFor(modelItem => item.Saldo)
+                        </td>
+                    </tr>
+                }
+            </tbody>
+            <tfoot>
+                <tr class="FooterTable">
+                    <td class="TextDarkBold" colspan="3">
+                        Totales
+                    </td>
+                    <td class="TextDarkBold text-center">$00.00
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+
                 </div>
             </div>
             <div class="tab-pane fade" id="nav-obj" role="tabpanel" aria-labelledby="nav-profile-tab">
@@ -73,61 +87,61 @@
                 <br />
                 <h2 class="TextCafeOscuroNegrita">OBJETIVOS</h2>
                 <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-md-7">
                         <div class="card">
                             <div class="card-header TextWhite">
                                 LIBERTAD FINANCIERA
                             </div>
                             <div class="card-body">
                                 <div class="row">
-                                    <div class="col-md-3 TextDark">NOMBRE:</div>
-                                    <div class="col-md-9 TextDarkBold">LIBERTAD FINANCIERA</div>
+                                    <div class="col-md-3 TextDark"> @Html.DisplayNameFor(model => model.objetivo.NombreO)</div>
+                                    <div class="col-md-4 TextDarkBold"> @Html.DisplayFor(model => model.objetivo.NombreO)</div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-3 TextDark">TIPO:</div>
-                                    <div class="col-md-9 TextDarkBold">INVERSIÓN</div>
+                                    <div class="col-md-3 TextDark"> @Html.DisplayNameFor(model => model.objetivo.Tipo)</div>
+                                    <div class="col-md-4 TextDarkBold">@Html.DisplayFor(model => model.objetivo.Tipo)</div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-3 TextDark">FECHA META:</div>
-                                    <div class="col-md-9 TextDarkBold">08/2026</div>
+                                    <div class="col-md-3 TextDark"> @Html.DisplayNameFor(model => model.objetivo.FechaMeta)</div>
+                                    <div class="col-md-4 TextDarkBold"> @Html.DisplayFor(model => model.objetivo.FechaMeta)</div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-3 TextDark">VALOR META:</div>
-                                    <div class="col-md-9 TextDarkBold">$25,000.00</div>
+                                    <div class="col-md-3 TextDark">@Html.DisplayNameFor(model => model.objetivo.ValorMeta)</div>
+                                    <div class="col-md-4 TextDarkBold">@Html.DisplayFor(model => model.objetivo.ValorMeta)</div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-3 TextDark">SALDO TOTAL:</div>
-                                    <div class="col-md-9 TextDarkBold">$1,023.63</div>
+                                    <div class="col-md-3 TextDark">@Html.DisplayFor(model => model.objetivo.Saldo)</div>
+                                    <div class="col-md-4 TextDarkBold">@Html.DisplayFor(model => model.objetivo.Saldo)</div>
                                 </div>
 
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-5">
                         <div class="card">
                             <div class="card-header TextWhite">
                                 JUBILACIÓN ANTICIPADA
                             </div>
                             <div class="card-body">
                                 <div class="row">
-                                    <div class="col-md-3 TextDark">NOMBRE:</div>
-                                    <div class="col-md-9 TextDarkBold">JUBILACIÓN ANTICIPADA</div>
+                                    <div class="col-md-4 TextDark"> @Html.DisplayNameFor(model => model.objetivo.NombreJubilacion)</div>
+                                    <div class="col-md-5 TextDarkBold">@Html.DisplayFor(model => model.objetivo.NombreJubilacion)</div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-3 TextDark">TIPO:</div>
-                                    <div class="col-md-9 TextDarkBold">PENSIÓN</div>
+                                    <div class="col-md-4 TextDark"> @Html.DisplayNameFor(model => model.objetivo.TipoJUbilacion)</div>
+                                    <div class="col-md-5 TextDarkBold"> @Html.DisplayFor(model => model.objetivo.TipoJUbilacion)</div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-3 TextDark">FECHA META:</div>
-                                    <div class="col-md-9 TextDarkBold">08/2026</div>
+                                    <div class="col-md-4 TextDark">@Html.DisplayNameFor(model => model.objetivo.FMJubilacion)</div>
+                                    <div class="col-md-5 TextDarkBold">@Html.DisplayFor(model => model.objetivo.FMJubilacion)</div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-3 TextDark">VALOR META:</div>
-                                    <div class="col-md-9 TextDarkBold">$50,000.00</div>
+                                    <div class="col-md-4 TextDark">@Html.DisplayFor(model => model.objetivo.VMJubilacion)</div>
+                                    <div class="col-md-5 TextDarkBold">@Html.DisplayFor(model => model.objetivo.VMJubilacion)</div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-3 TextDark">SALDO TOTAL:</div>
-                                    <div class="col-md-9 TextDarkBold">$1,023.63</div>
+                                    <div class="col-md-4 TextDark"> @Html.DisplayNameFor(model => model.objetivo.STJubilacion)</div>
+                                    <div class="col-md-5 TextDarkBold"> @Html.DisplayFor(model => model.objetivo.STJubilacion)</div>
                                 </div>
                             </div>
                         </div>
@@ -147,18 +161,17 @@
                             </tr>
                         </thead>
                         <tbody>
+                        @foreach(var items in ViewBag.Distribucion)
+                        {
+
                             <tr>
-                                <td class="text-center TextDarkBold">LIBERTAD FINANCIERA</td>
-                                <td class="text-center TextDarkBold">50%</td>
-                                <td class="text-center TextDarkBold">50%</td>
-                                <td class="text-center TextDarkBold">%</td>
+                                <td class="text-center TextDarkBold">@items.NObjetivo</td>
+                                <td class="text-center TextDarkBold">@items.Consignacion</td>
+                                <td class="text-center TextDarkBold">@items.Deduccion</td>
+                                <td class="text-center TextDarkBold">@items.Debito</td>
                             </tr>
-                            <tr>
-                                <td class="text-center TextDarkBold">JUBILACIÓN ANTICIPADA</td>
-                                <td class="text-center TextDarkBold">50%</td>
-                                <td class="text-center TextDarkBold">50%</td>
-                                <td class="text-center TextDarkBold">%</td>
-                            </tr>
+           
+                        }
                         </tbody>
                         <tfoot>
                             <tr style="background-color: #c7c9c7;">
@@ -173,6 +186,7 @@
                 <br />
                 <h2 class="TextCafeOscuroNegrita">BENEFICIARIOS</h2>
                 <div class="table-responsive">
+
                     <table class="table table-striped">
                         <thead>
                             <tr class="text-center" style="background-color: #7a6855 !important; color: white;">
@@ -184,18 +198,23 @@
                             </tr>
                         </thead>
                         <tbody>
+                            @foreach(var itemb in ViewBag.Beneficiarios)
+                            {
                             <tr>
-                                <td class="text-center  TextDarkBold">OBED ISAI QUIJADA DURAN</td>
-                                <td class="text-center  TextDarkBold">XXXX</td>
-                                <td class="text-center  TextDarkBold">XX/XX/XX</td>
-                                <td class="text-center  TextDarkBold">XXXX</td>
+                                <td class="text-center  TextDarkBold">@itemb.NombreB</td>
+                                <td class="text-center  TextDarkBold">@itemb.Parentesco </td>
+                                <td class="text-center  TextDarkBold">@itemb.FechaNacimiento</td>
+                                <td class="text-center  TextDarkBold">@itemb.Porcentaje</td>
                                 <td class="text-center  TextDarkBold">%</td>
                             </tr>
+                            }
                         </tbody>
                     </table>
                 </div>
 
             </div>
+
+           
             <div class="tab-pane fade show active" id="nav-cuentas" role="tabpanel" aria-labelledby="nav-contact-tab">
                 <br />
                 <br />
