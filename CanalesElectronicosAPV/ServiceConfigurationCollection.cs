@@ -1,6 +1,7 @@
 ﻿//using KeycloakTokenManager.Common;
 //using NetCore.KeycloakTokenManager;
 
+
 namespace CanalesElectronicosAPV
 {
     public static class ServiceConfigurationCollection
@@ -23,7 +24,9 @@ namespace CanalesElectronicosAPV
             //};
             var gg = "";
             //configuration.Bind("KeyCloakConfigs", KeyCloakConfigs);
+
             //services.AddTokenManager(Ke);
+
             //services.AddTokenManager(new KeycloakUrlOptions
             //{
             //    ClientId = configuration["KeyCloakConfigs:ClientId"],
