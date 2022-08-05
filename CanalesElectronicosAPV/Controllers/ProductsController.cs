@@ -57,7 +57,7 @@ namespace CanalesElectronicosAPV.Controllers
             List<Models.DTO.Beneficiarios> lstbene = new();
             lstdst.Add(new Distribucion
                    {
-                       NObjetivo= "LIBERTAD FINANCIERA", 
+                       NObjetivo= "LIBERTAD FINANCIERA ", 
                        Consignacion = "50%", 
                       Deduccion  = "50%",
                      Debito = "%"
