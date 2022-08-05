@@ -81,13 +81,21 @@ namespace CanalesElectronicosAPV.Models.DTO
 
     }
 
-    public class ProductosDTO
+    public  class ProductosDTO
     {
-        public List<ProductsDTO> Productos { get; set; }
+        public List<ProductsDTO>? Productos { get; set; }
+        public List<Distribucion>? Distribucion { get; set; }
 
-        public Objetivos objetivo {get;set;}
-        public Beneficiarios beneficiarios { get; set; }
-        public Distribucion distribucion { get; set; }
+        public List<Beneficiarios>? Beneficiario { get; set; }
+        public Objetivos? objetivo {get;set;}
+        public Beneficiarios? beneficiarios { get; set; }
+        public Distribucion? distribucion { get; set; }
+
+       
+
+        
 
     }
+
+   
 }

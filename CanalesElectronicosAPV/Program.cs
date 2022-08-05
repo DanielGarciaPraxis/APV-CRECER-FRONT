@@ -1,6 +1,5 @@
 //using CanalesElectronicosAPV.Domain.Configuration;
-using KeycloakTokenManager.Common;
-using NetCore.KeycloakTokenManager;
+
 //using System.Configuration;
 
 using CanalesElectronicosAPV;
