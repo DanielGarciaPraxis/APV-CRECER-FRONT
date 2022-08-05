@@ -12,7 +12,6 @@
 
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="11.0.1" />
-    <PackageReference Include="KeycloakTokenManager" Version="1.0.4" />
     <PackageReference Include="log4net" Version="2.0.14" />
     <PackageReference Include="Log4Net_Logging" Version="1.1.0" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.7" />

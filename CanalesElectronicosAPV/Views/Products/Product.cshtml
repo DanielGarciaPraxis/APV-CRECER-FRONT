@@ -1,0 +1,63 @@
+﻿@model IEnumerable<CanalesElectronicosAPV.Models.DTO.ProductDTO>
+
+@{
+    ViewData["Title"] = "Producto";
+    ViewData["Layout"] = "_Layout.cshtml";
+}
+
+<br />
+<div class = "row paddingRows">
+    <div class = "col-sm-6">
+        @Html.DropDownList("items",(IEnumerable<SelectListItem>)ViewBag.items,"Selecciona Plan",htmlAttributes: new{@class="form-select"})
+    </div>
+</div>
+<div class="row paddingRows">
+    <div class="table-responsive">
+        <table class="table table-borderless">
+            <thead>
+                <tr class="text-center HeaderTable">
+                    <th class="text-center">
+                        @Html.DisplayNameFor(model => model.LineaProducto)
+                    </th>
+                    <th class="text-center">
+                        @Html.DisplayNameFor(model => model.Producto)
+                    </th>
+                    <th class="text-center">
+                        @Html.DisplayNameFor(model => model.Estado)
+                    </th> 
+                    <th class="text-center">
+                        @Html.DisplayNameFor(model => model.Saldo)
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model) {
+                    <tr>
+                        <td class="text-center TextDarkBold">
+                            @Html.DisplayFor(modelItem => item.LineaProducto)
+                        </td>
+                        <td class="text-center TextDarkBold">
+                            @Html.DisplayFor(modelItem => item.Producto)
+                        </td>
+                        <td class="text-center TextDarkBold">
+                            @Html.DisplayFor(modelItem => item.Estado)
+                        </td>
+                        <td class="text-center TextDarkBold">
+                            @Html.DisplayFor(modelItem => item.Saldo)
+                        </td>
+                    </tr>
+                }
+            </tbody>
+            <tfoot>
+                <tr class="FooterTable">
+                    <td class="TextDarkBold" colspan="3">
+                        Totales
+                    </td>
+                    <td class="TextDarkBold text-center">$00.00
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>
+

@@ -1,6 +1,6 @@
 ﻿using CanalesElectronicosAPV.Core.Dto_s.Common;
 using CanalesElectronicosAPV.Core.Dto_s.Response;
-using KeycloakTokenManager;
+//using KeycloakTokenManager;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Newtonsoft.Json;
 using System;
@@ -18,19 +18,19 @@ namespace CanalesElectronicos.Infrastructures.Common
     {
         public virtual HttpClient cliente { get; set; }
         public IDictionary<string, string> Headers { get; set; }
-        private readonly ITokenManager manager;
+        //private readonly ITokenManager manager;
         private readonly ConfigUrls _url;
         private readonly EmailConfig _emailConfig;
 
-        public RestRepository(ITokenManager _manager, IOptions<ConfigUrls> url, IOptions<EmailConfig> emailConfig)
-        {
-            manager = _manager ?? throw new ArgumentNullException(nameof(_manager));
-            cliente = new HttpClient();
-            _url = url.Value ?? throw new ArgumentNullException(nameof(url));
-            _emailConfig = emailConfig.Value ?? throw new ArgumentNullException(nameof(emailConfig));
+        //public RestRepository(ITokenManager _manager, IOptions<ConfigUrls> url, IOptions<EmailConfig> emailConfig)
+        //{
+        //    manager = _manager ?? throw new ArgumentNullException(nameof(_manager));
+        //    cliente = new HttpClient();
+        //    _url = url.Value ?? throw new ArgumentNullException(nameof(url));
+        //    _emailConfig = emailConfig.Value ?? throw new ArgumentNullException(nameof(emailConfig));
 
-            Log.SetUp(Assembly.GetEntryAssembly(), "log4net.config");
-        }
+        //    Log.SetUp(Assembly.GetEntryAssembly(), "log4net.config");
+        //}
         //public RestRepository(IOptions<ConfigUrls> url, IOptions<EmailConfig> emailConfig)
         //{
            
@@ -48,7 +48,7 @@ namespace CanalesElectronicos.Infrastructures.Common
             try
             {
                 ConsultService datosServicio = new ConsultService();
-                string token = await manager.GetAccessTokenAsync();
+                //string token = await manager.GetAccessTokenAsync();
                 string uri = $"{datos.BaseAddress}{datos.ConfigUrls}";
                 HttpRequestMessage messageRequest = new HttpRequestMessage
                 {
@@ -58,7 +58,7 @@ namespace CanalesElectronicos.Infrastructures.Common
                 };
                 messageRequest.Headers.Accept.Clear();
                 messageRequest.Headers.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-                messageRequest.Headers.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue(JwtBearerDefaults.AuthenticationScheme, token);
+                //messageRequest.Headers.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue(JwtBearerDefaults.AuthenticationScheme, token);
                 //if (_url.NotificadorApv.Equals(datos.BaseAddress))
                 //{
                 //    messageRequest.Headers.Add("userName", _emailConfig.UsrApvCliente);
