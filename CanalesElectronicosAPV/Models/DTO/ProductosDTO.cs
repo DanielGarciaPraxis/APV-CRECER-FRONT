@@ -12,31 +12,31 @@ namespace CanalesElectronicosAPV.Models.DTO
 
     public class Objetivos
     {
-        [Display(Name = "Nombre:")]
+        [Display(Name = "NOMBRE:")]
         public string? NombreO { get; set; }
-        [Display(Name = "Tipo:")]
+        [Display(Name = "TIPO:")]
         public string? Tipo { get; set; }
-        [Display(Name = "Fecha Meta:")]
+        [Display(Name = "FECHA META:")]
         public string? FechaMeta { get; set; }
-        [Display(Name = "Valor Meta:")]
+        [Display(Name = "VALOR META:")]
         public string? ValorMeta { get; set; }
 
-        [Display(Name = "Saldo Total:")]
+        [Display(Name = "SALDO TOTAL:")]
         public string? Saldo { get; set; }
 
-        [Display(Name = "Nombre:")]
+        [Display(Name = "NOMBRE:")]
         public string? NombreJubilacion { get; set; }
 
-        [Display(Name = "Tipo:")]
+        [Display(Name = "TIPO:")]
         public string? TipoJUbilacion { get; set; }
 
-        [Display(Name = "Fecha Meta:")]
+        [Display(Name = "FECHA META:")]
         public string? FMJubilacion { get; set; }
 
-        [Display(Name = "Valor Meta:")]
+        [Display(Name = "VALOR META:")]
         public string? VMJubilacion { get; set; }
 
-        [Display(Name = "Saldo Total:")]
+        [Display(Name = "SALDO META:")]
         public string? STJubilacion { get; set; }
     }
 
@@ -81,6 +81,30 @@ namespace CanalesElectronicosAPV.Models.DTO
 
     }
 
+    public class  SaldoTotal
+        {
+        public string? NumeroCuenta { get; set; }
+    public string? TipoAhorro { get; set; }
+        public string? NombreCuenta { get; set; }
+        public string? SaldoDolares { get; set; }
+        public string? Unidades { get; set; }
+
+
+    }
+
+
+    public class ReporteMovimientos
+    {
+        public string? FechaMovimiento { get; set; }
+        public string? NombreObjetivos { get; set; }
+
+        public string? TipoMovto { get; set; }
+        public string? ValorMovto { get; set; }
+
+        public string? ValorCuota { get; set; }
+
+        public string? Unidades{ get; set; }
+    }
     public  class ProductosDTO
     {
         public List<ProductsDTO>? Productos { get; set; }
