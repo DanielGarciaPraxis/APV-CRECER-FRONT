@@ -15,11 +15,12 @@ namespace CanalesElectronicosAPV.Controllers
             List<ProductsDTO> list = new List<ProductsDTO>();
             Models.DTO.ProductsDTO p = new Models.DTO.ProductsDTO();
             Models.DTO.Objetivos objetivo = new Models.DTO.Objetivos();
+            CuentasBancarias cuentas = new CuentasBancarias();
             p = new Models.DTO.ProductsDTO();
             p.LineaProducto = "AHORRO PREVISIONAL VOLUNTARIO CRECER BALANCEADO";
-            p.Producto = "1 PLAN INDIVIDUAL - DINÁMIC";
+            p.Producto = "1 PLAN INDIVIDUAL - DINÁMICO";
             p.Estado = "ACTIVO";
-            p.Saldo = 0;
+            p.Saldo = "$00.00";
             list.Add(p);
 
 
@@ -132,12 +133,20 @@ namespace CanalesElectronicosAPV.Controllers
 
             });
 
-
+            cuentas.EntidadFinanciera = "BANCO PROMERICA S.A";
+            cuentas.TipoCuenta = "CORRIENTE";
+            cuentas.Proposito = "PAGO";
+            cuentas.NumeroCuenta = "XXXXXXXXXXXXX";
+            cuentas.TipoIdentificacion = "DOCUMENTO ÚNICO DE IDENTIFICACIÓN";
+            cuentas.NumeroIdentificacion = "XXXXXXXX";
+            cuentas.CuentaPreferida = "NO";
+            cuentas.EstadoCuenta = "ACTIVA";
 
             ViewBag.Distribucion = lstdst;
             ViewBag.Beneficiarios = lstbene;
             productosDTO.Distribucion = lstdst;
-            productosDTO.Beneficiario = lstbene; 
+            productosDTO.Beneficiario = lstbene;
+            productosDTO.cuentasbancarias = cuentas;
             return View(productosDTO);
         }
 
