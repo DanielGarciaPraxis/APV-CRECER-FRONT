@@ -1,6 +1,8 @@
 ﻿using CanalesElectronicosAPV.Core.Dto_s.Common;
 using CanalesElectronicosAPV.Core.Dto_s.Response;
+
 //using KeycloakTokenManager;
+
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Newtonsoft.Json;
 using System;
@@ -16,9 +18,11 @@ namespace CanalesElectronicos.Infrastructures.Common
 {
     public class RestRepository : IRestRepository
     {
+
         public virtual HttpClient cliente { get; set; }
         public IDictionary<string, string> Headers { get; set; }
         //private readonly ITokenManager manager;
+
         private readonly ConfigUrls _url;
         private readonly EmailConfig _emailConfig;
 
@@ -48,7 +52,9 @@ namespace CanalesElectronicos.Infrastructures.Common
             try
             {
                 ConsultService datosServicio = new ConsultService();
+
                 //string token = await manager.GetAccessTokenAsync();
+
                 string uri = $"{datos.BaseAddress}{datos.ConfigUrls}";
                 HttpRequestMessage messageRequest = new HttpRequestMessage
                 {
@@ -58,7 +64,10 @@ namespace CanalesElectronicos.Infrastructures.Common
                 };
                 messageRequest.Headers.Accept.Clear();
                 messageRequest.Headers.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
+
                 //messageRequest.Headers.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue(JwtBearerDefaults.AuthenticationScheme, token);
+
+
                 //if (_url.NotificadorApv.Equals(datos.BaseAddress))
                 //{
                 //    messageRequest.Headers.Add("userName", _emailConfig.UsrApvCliente);
