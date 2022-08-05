@@ -89,7 +89,7 @@
                 <h2 class="TextCafeOscuroNegrita">OBJETIVOS</h2>
                 <div class="row">
                     <div class="col-md-7">
-                        <div class="card">
+                         <div class="card ">
                             <div class="card-header TextWhite">
                                 LIBERTAD FINANCIERA
                             </div>
@@ -119,29 +119,29 @@
                         </div>
                     </div>
                     <div class="col-md-5">
-                        <div class="card">
+                        <div class="card"  >
                             <div class="card-header TextWhite">
                                 JUBILACIÓN ANTICIPADA
                             </div>
                             <div class="card-body">
                                 <div class="row">
-                                    <div class="col-md-4 TextDark"> @Html.DisplayNameFor(model => model.objetivo.NombreJubilacion)</div>
+                                    <div class="col-md-3 TextDark"> @Html.DisplayNameFor(model => model.objetivo.NombreJubilacion)</div>
                                     <div class="col-md-5 TextDarkBold">@Html.DisplayFor(model => model.objetivo.NombreJubilacion)</div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-4 TextDark"> @Html.DisplayNameFor(model => model.objetivo.TipoJUbilacion)</div>
+                                    <div class="col-md-3 TextDark"> @Html.DisplayNameFor(model => model.objetivo.TipoJUbilacion)</div>
                                     <div class="col-md-5 TextDarkBold"> @Html.DisplayFor(model => model.objetivo.TipoJUbilacion)</div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-4 TextDark">@Html.DisplayNameFor(model => model.objetivo.FMJubilacion)</div>
+                                    <div class="col-md-3 TextDark">@Html.DisplayNameFor(model => model.objetivo.FMJubilacion)</div>
                                     <div class="col-md-5 TextDarkBold">@Html.DisplayFor(model => model.objetivo.FMJubilacion)</div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-4 TextDark">@Html.DisplayFor(model => model.objetivo.VMJubilacion)</div>
+                                    <div class="col-md-3 TextDark">@Html.DisplayFor(model => model.objetivo.VMJubilacion)</div>
                                     <div class="col-md-5 TextDarkBold">@Html.DisplayFor(model => model.objetivo.VMJubilacion)</div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-4 TextDark"> @Html.DisplayNameFor(model => model.objetivo.STJubilacion)</div>
+                                    <div class="col-md-3 TextDark"> @Html.DisplayNameFor(model => model.objetivo.STJubilacion)</div>
                                     <div class="col-md-5 TextDarkBold"> @Html.DisplayFor(model => model.objetivo.STJubilacion)</div>
                                 </div>
                             </div>
@@ -162,14 +162,14 @@
                             </tr>
                         </thead>
                         <tbody>
-                        @foreach(var items in ViewBag.Distribucion)
+                        @foreach(var items in Model.Distribucion)
                         {
 
                             <tr>
-                                <td class="text-center TextDarkBold">@items.NObjetivo</td>
-                                <td class="text-center TextDarkBold">@items.Consignacion</td>
-                                <td class="text-center TextDarkBold">@items.Deduccion</td>
-                                <td class="text-center TextDarkBold">@items.Debito</td>
+                                <td class="text-center TextDarkBold">@Html.DisplayFor(modelItem => items.NObjetivo)</td>
+                                <td class="text-center TextDarkBold">@Html.DisplayFor(modelItem => items.Consignacion)</td>
+                                <td class="text-center TextDarkBold">@Html.DisplayFor(modelItem => items.Deduccion)</td>
+                                <td class="text-center TextDarkBold">@Html.DisplayFor(modelItem => items.Debito)</td>
                             </tr>
            
                         }
@@ -199,13 +199,13 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach(var itemb in ViewBag.Beneficiarios)
+                            @foreach(var itemb in Model.Beneficiario)
                             {
                             <tr>
-                                <td class="text-center  TextDarkBold">@itemb.NombreB</td>
-                                <td class="text-center  TextDarkBold">@itemb.Parentesco </td>
-                                <td class="text-center  TextDarkBold">@itemb.FechaNacimiento</td>
-                                <td class="text-center  TextDarkBold">@itemb.Porcentaje</td>
+                                <td class="text-center  TextDarkBold">@Html.DisplayFor(modelItem => itemb.NombreB)</td>
+                                <td class="text-center  TextDarkBold">@Html.DisplayFor(modelItem => itemb.Parentesco)</td>
+                                <td class="text-center  TextDarkBold">@Html.DisplayFor(modelItem => itemb.FechaNacimiento)</td>
+                                <td class="text-center  TextDarkBold">@Html.DisplayFor(modelItem => itemb.Porcentaje)</td>
                                 <td class="text-center  TextDarkBold">%</td>
                             </tr>
                             }
@@ -219,7 +219,7 @@
             <div class="tab-pane fade show active" id="nav-cuentas" role="tabpanel" aria-labelledby="nav-contact-tab">
                 <br />
                 <br />
-                <h2 class="TextCafeOscuroNegrita">CUENTAS BANCARIAS</h2>
+                <h2 class="TextCafeOscuroNegrita">CUENTAS BANCARIAS </h2>
                 <div class="table-responsive">
                     <table class="table table-striped">
                         <thead>

@@ -1,6 +1,5 @@
 ﻿using CanalesElectronicosAPV.Core.Dto_s.Common;
 using CanalesElectronicosAPV.Core.Dto_s.Response;
-//using KeycloakTokenManager;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Newtonsoft.Json;
 using System;
@@ -58,7 +57,7 @@ namespace CanalesElectronicos.Infrastructures.Common
                 };
                 messageRequest.Headers.Accept.Clear();
                 messageRequest.Headers.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-                //messageRequest.Headers.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue(JwtBearerDefaults.AuthenticationScheme, token);
+             //   messageRequest.Headers.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue(JwtBearerDefaults.AuthenticationScheme, token);
                 //if (_url.NotificadorApv.Equals(datos.BaseAddress))
                 //{
                 //    messageRequest.Headers.Add("userName", _emailConfig.UsrApvCliente);

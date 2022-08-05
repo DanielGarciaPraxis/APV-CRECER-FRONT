@@ -11,6 +11,7 @@ namespace CanalesElectronicosAPV
 
             //IConfiguration configuration = configuration;
             //configuration.GetSection("KeyCloakConfigs").Bind(Ke);
+
             //var gg = configuration.GetSection("KeyCloakConfigs") as KeycloakConfigs;
             //var miappsettings = configuration["KeyCloakConfigs:KeycloakUrl"];
             //KeycloakConfigs keycloakConfigs = new()

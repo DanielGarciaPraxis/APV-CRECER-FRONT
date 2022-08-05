@@ -5,7 +5,6 @@
 
 using CanalesElectronicosAPV;
 using CanalesElectronicosAPV.Core.Dto_s.Common;
-using CanalesElectronicosAPV.Core.Dto_s.Common;
 
 var builder = WebApplication.CreateBuilder(args);
 
