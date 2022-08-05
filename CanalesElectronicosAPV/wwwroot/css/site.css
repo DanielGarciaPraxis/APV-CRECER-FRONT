@@ -308,6 +308,8 @@ background-color: #7A6855 !important;
 .nav-tabs .nav-link {
 border-top-left-radius: 0rem;
 border-top-right-radius: 2rem;
+padding-bottom:1rem;
+padding-top:1rem;
 }
 
 .card-header {
