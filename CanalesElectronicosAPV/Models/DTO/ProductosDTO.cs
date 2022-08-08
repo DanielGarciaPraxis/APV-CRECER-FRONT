@@ -83,10 +83,10 @@ namespace CanalesElectronicosAPV.Models.DTO
 
     public class CuentasBancarias
     {
-        [Display(Name ="ENTIDAD FINANCIERA:")]
+        [Display(Name = "ENTIDAD FINANCIERA:")]
         public string EntidadFinanciera { get; set; }
         [Display(Name = "TIPO DE CUENTA BANCARIA:")]
-        public string TipoCuenta{ get; set; }
+        public string TipoCuenta { get; set; }
         [Display(Name = "PROPÓSITO DE LA CUENTA BANCARIA:")]
         public string Proposito { get; set; }
         [Display(Name = "NÚMERO DE LA CUENTA BANCARIA:")]
@@ -99,7 +99,33 @@ namespace CanalesElectronicosAPV.Models.DTO
         public string CuentaPreferida { get; set; }
         [Display(Name = "ESTADO DE LA CUENTA EN AFP:")]
         public string EstadoCuenta { get; set; }
+    }
 
+    public class SaldoTotal
+    {
+        public string? NumeroCuenta { get; set; }
+        public string? TipoAhorro { get; set; }
+        public string? NombreCuenta { get; set; }
+        public string? SaldoDolares { get; set; }
+        public string? Unidades { get; set; }
+
+
+    }
+
+
+    public class ReporteMovimientos
+    {
+        public string? FechaMovimiento { get; set; }
+        public string? NombreObjetivos { get; set; }
+
+        public string? TipoMovto { get; set; }
+        public string? ValorMovto { get; set; }
+
+        public string? ValorCuota { get; set; }
+
+        public string? Unidades { get; set; }
+
+    
     }
     public  class ProductosDTO
     {
