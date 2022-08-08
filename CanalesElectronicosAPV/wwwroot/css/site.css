@@ -351,3 +351,22 @@ color: #fff;
 .FooterTable {
     background-color: #c7c9c7;
 }
+
+.table, .dataTable-table {
+    --bs-table-striped-bg: #c7c9c7 !important;
+    color: #53565A !important;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) > * {
+    color: #53565A !important;
+}
+
+.nav-tabs .nav-link.active {
+    color: white !important;
+    background-color: #7A6855 !important;
+}
+.nav-tabs .nav-link:hover {
+    color: white !important;
+    background-color: #7A6855 !important;
+}
+

@@ -25,7 +25,24 @@ namespace CanalesElectronicosAPV.Controllers
             p.Estado = "ACTIVO";
             p.Saldo = "$00.00";
             list.Add(p);
-
+            p = new Models.DTO.ProductsDTO();
+            p.LineaProducto = "AHORRO PREVISIONAL VOLUNTARIO CRECER BALANCEADO";
+            p.Producto = "1 PLAN INDIVIDUAL - DINÁMICO";
+            p.Estado = "ACTIVO";
+            p.Saldo = "$00.00";
+            list.Add(p);
+            p = new Models.DTO.ProductsDTO();
+            p.LineaProducto = "AHORRO PREVISIONAL VOLUNTARIO CRECER BALANCEADO";
+            p.Producto = "1 PLAN INDIVIDUAL - DINÁMICO";
+            p.Estado = "ACTIVO";
+            p.Saldo = "$00.00";
+            list.Add(p);
+            p = new Models.DTO.ProductsDTO();
+            p.LineaProducto = "AHORRO PREVISIONAL VOLUNTARIO CRECER BALANCEADO";
+            p.Producto = "1 PLAN INDIVIDUAL - DINÁMICO";
+            p.Estado = "ACTIVO";
+            p.Saldo = "$00.00";
+            list.Add(p);
 
             objetivo.NombreO = "LIBERTAD FINANCIERA";
             objetivo.Tipo = "INVERSIÓN";
@@ -164,16 +181,24 @@ namespace CanalesElectronicosAPV.Controllers
 
             }
 
+            cuentas.EntidadFinanciera = "BANCO PROMERICA S.A";
+            cuentas.TipoCuenta = "CORRIENTE";
+            cuentas.Proposito = "PAGO";
+            cuentas.NumeroCuenta = "XXXXXXXXXXXXX";
+            cuentas.TipoIdentificacion = "DOCUMENTO ÚNICO DE IDENTIFICACIÓN";
+            cuentas.NumeroIdentificacion = "XXXXXXXX";
+            cuentas.CuentaPreferida = "NO";
+            cuentas.EstadoCuenta = "ACTIVA";
 
 
-
-                ViewBag.Distribucion = lstdst;
+            ViewBag.Distribucion = lstdst;
             ViewBag.Beneficiarios = lstbene;
             productosDTO.Distribucion = lstdst;
             productosDTO.Beneficiario = lstbene;
 
             productosDTO.SaldosTotales = listst;
-            productosDTO.ReporteMovtos = listrm; 
+            productosDTO.ReporteMovtos = listrm;
+            productosDTO.cuentasbancarias = cuentas;
 
             return View(productosDTO);
         }
