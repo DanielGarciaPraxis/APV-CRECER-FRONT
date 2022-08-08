@@ -7,7 +7,7 @@ namespace CanalesElectronicosAPV.Models.DTO
         public string? LineaProducto { get; set; }
         public string? Producto { get; set; }
         public string? Estado { get; set; }
-        public decimal? Saldo { get; set; }
+        public string? Saldo { get; set; }
     }
 
     public class Objetivos
@@ -81,43 +81,35 @@ namespace CanalesElectronicosAPV.Models.DTO
 
     }
 
-    public class  SaldoTotal
-        {
-        public string? NumeroCuenta { get; set; }
-    public string? TipoAhorro { get; set; }
-        public string? NombreCuenta { get; set; }
-        public string? SaldoDolares { get; set; }
-        public string? Unidades { get; set; }
-
-
-    }
-
-
-    public class ReporteMovimientos
+    public class CuentasBancarias
     {
-        public string? FechaMovimiento { get; set; }
-        public string? NombreObjetivos { get; set; }
+        [Display(Name ="ENTIDAD FINANCIERA:")]
+        public string EntidadFinanciera { get; set; }
+        [Display(Name = "TIPO DE CUENTA BANCARIA:")]
+        public string TipoCuenta{ get; set; }
+        [Display(Name = "PROPÓSITO DE LA CUENTA BANCARIA:")]
+        public string Proposito { get; set; }
+        [Display(Name = "NÚMERO DE LA CUENTA BANCARIA:")]
+        public string NumeroCuenta { get; set; }
+        [Display(Name = "TIPO DE IDENTIFICACIÓN DEL CLIENTE TITULAR:")]
+        public string TipoIdentificacion { get; set; }
+        [Display(Name = "NÚMERO DE IDENTIFICACION DEL CLIENTE TITULAR:")]
+        public string NumeroIdentificacion { get; set; }
+        [Display(Name = "CUENTA PREFERIDA:")]
+        public string CuentaPreferida { get; set; }
+        [Display(Name = "ESTADO DE LA CUENTA EN AFP:")]
+        public string EstadoCuenta { get; set; }
 
-        public string? TipoMovto { get; set; }
-        public string? ValorMovto { get; set; }
-
-        public string? ValorCuota { get; set; }
-
-        public string? Unidades{ get; set; }
     }
     public  class ProductosDTO
     {
         public List<ProductsDTO>? Productos { get; set; }
         public List<Distribucion>? Distribucion { get; set; }
-
         public List<Beneficiarios>? Beneficiario { get; set; }
         public Objetivos? objetivo {get;set;}
         public Beneficiarios? beneficiarios { get; set; }
         public Distribucion? distribucion { get; set; }
-
-       
-
-        
+        public CuentasBancarias cuentasbancarias { get; set; }
 
     }
 

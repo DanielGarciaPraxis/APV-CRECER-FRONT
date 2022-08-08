@@ -1,4 +1,3 @@
-
 ﻿//using KeycloakTokenManager.Common;
 //using NetCore.KeycloakTokenManager;
 
@@ -9,7 +8,6 @@ namespace CanalesElectronicosAPV
     {
         public static IServiceCollection ServiceConfiguration(this IServiceCollection services, IConfiguration configuration)
         {
-
             //var Ke = new KeycloakUrlOptions();
 
             //IConfiguration configuration = configuration;
