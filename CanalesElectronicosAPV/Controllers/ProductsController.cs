@@ -18,11 +18,12 @@ namespace CanalesElectronicosAPV.Controllers
 
             Models.DTO.ProductsDTO p = new Models.DTO.ProductsDTO();
             Models.DTO.Objetivos objetivo = new Models.DTO.Objetivos();
+            CuentasBancarias cuentas = new CuentasBancarias();
             p = new Models.DTO.ProductsDTO();
             p.LineaProducto = "AHORRO PREVISIONAL VOLUNTARIO CRECER BALANCEADO";
-            p.Producto = "1 PLAN INDIVIDUAL - DINÁMIC";
+            p.Producto = "1 PLAN INDIVIDUAL - DINÁMICO";
             p.Estado = "ACTIVO";
-            p.Saldo = 0;
+            p.Saldo = "$00.00";
             list.Add(p);
 
 
@@ -136,6 +137,7 @@ namespace CanalesElectronicosAPV.Controllers
 
             });
 
+
             for (int i = 0; i < 5; i++)
                 listst.Add(new SaldoTotal
                 {
@@ -164,12 +166,15 @@ namespace CanalesElectronicosAPV.Controllers
 
 
 
+
                 ViewBag.Distribucion = lstdst;
             ViewBag.Beneficiarios = lstbene;
             productosDTO.Distribucion = lstdst;
             productosDTO.Beneficiario = lstbene;
+
             productosDTO.SaldosTotales = listst;
             productosDTO.ReporteMovtos = listrm; 
+
             return View(productosDTO);
         }
 
