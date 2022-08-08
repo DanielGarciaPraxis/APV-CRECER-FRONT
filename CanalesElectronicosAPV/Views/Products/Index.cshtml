@@ -23,14 +23,14 @@
     <div class="col">
         <nav>
             <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                <button class="nav-link " id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-products" type="button" role="tab" aria-controls="nav-home" aria-selected="false">PRODUCTOS</button>
-                <button class="nav-link " id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-obj" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">OBJETIVOS Y BENEFICIARIOS</button>
-                <button class="nav-link active active-custom" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-cuentas" type="button" role="tab" aria-controls="nav-contact" aria-selected="true">CUENTAS BANCARIAS</button>
+                <button class="nav-link active " id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-products" type="button" role="tab" aria-controls="nav-home" aria-selected="true">PRODUCTOS</button>
+                <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-obj" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">OBJETIVOS Y BENEFICIARIOS</button>
+                <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-cuentas" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">CUENTAS BANCARIAS</button>
                 <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-saldos" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">SALDOS Y MOVIMIENTOS</button>
             </div>
         </nav>
         <div class="tab-content" id="nav-tabContent">
-            <div class="tab-pane fade" id="nav-products" role="tabpanel" aria-labelledby="nav-home-tab">
+            <div class="tab-pane fade  show active" id="nav-products" role="tabpanel" aria-labelledby="nav-home-tab">
                 <br />
                 <br />
                 <div class="row">
@@ -43,43 +43,43 @@
                 <br />
                 <br />
                 <div class="table-responsive">
-                            <table class="table table-borderless">
-            <thead>
-                <tr class="text-center HeaderTable">
-                    <td class="text-center">LÍNEA DE PRODUCTO</td>
-                    <td class="text-center">PRODUCTO</td>
-                    <td class="text-center">ESTADO DEL AFILIADO EN EL PRODUCTO</td>
-                    <td class="text-center">SALDOS</td>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var item in Model.Productos) {
-                    <tr>
-                        <td class="text-center TextDarkBold">
-                            @Html.DisplayFor(modelItem => item.LineaProducto)
-                        </td>
-                        <td class="text-center TextDarkBold">
-                            @Html.DisplayFor(modelItem => item.Producto)
-                        </td>
-                        <td class="text-center TextDarkBold">
-                            @Html.DisplayFor(modelItem => item.Estado)
-                        </td>
-                        <td class="text-center TextDarkBold">
-                            @Html.DisplayFor(modelItem => item.Saldo)
-                        </td>
-                    </tr>
-                }
-            </tbody>
-            <tfoot>
-                <tr class="FooterTable">
-                    <td class="TextDarkBold" colspan="3">
-                        Totales
-                    </td>
-                    <td class="TextDarkBold text-center">$00.00
-                    </td>
-                </tr>
-            </tfoot>
-        </table>
+                    <table class="table table-borderless table-striped" id="tableProducts">
+                        <thead>
+                            <tr class="text-center HeaderTable">
+                                <th class="text-center">LÍNEA DE PRODUCTO &nbsp;<i class="fa-solid fa-sort"></i></th>
+                                <th class="text-center">PRODUCTO &nbsp;<i class="fa-solid fa-sort"></i></th>
+                                <th class="text-center">ESTADO DEL AFILIADO EN EL PRODUCTO</th>
+                                <th class="text-center">SALDOS</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.Productos) {
+                                <tr>
+                                    <td class="text-center TextDarkBold">
+                                        @Html.DisplayFor(modelItem => item.LineaProducto)
+                                    </td>
+                                    <td class="text-center TextDarkBold">
+                                        @Html.DisplayFor(modelItem => item.Producto)
+                                    </td>
+                                    <td class="text-center TextDarkBold">
+                                        @Html.DisplayFor(modelItem => item.Estado)
+                                    </td>
+                                    <td class="text-center TextDarkBold">
+                                        @Html.DisplayFor(modelItem => item.Saldo)
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                        <tfoot>
+                            <tr class="FooterTable">
+                                <td class="TextDarkBold" colspan="3">
+                                    Totales
+                                </td>
+                                <td class="TextDarkBold text-center">$00.00
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
 
                 </div>
             </div>
@@ -219,7 +219,7 @@
             </div>
 
            
-            <div class="tab-pane fade show active" id="nav-cuentas" role="tabpanel" aria-labelledby="nav-contact-tab">
+            <div class="tab-pane fade" id="nav-cuentas" role="tabpanel" aria-labelledby="nav-contact-tab">
                 <br />
                 <br />
 
@@ -388,3 +388,39 @@
 
     </div>
 </div>
+
+@section Scripts {
+
+<script>
+$('th').click(function() {
+    if ($(this).index() <= 1) {
+        var table = $(this).parents('table').eq(0)
+
+        var rows = table.find('tr:gt(0)').toArray().sort(comparer($(this).index()))
+        console.log(rows);
+        this.asc = !this.asc
+        if (!this.asc) {
+            rows = rows.reverse()
+        }
+        for (var i = 0; i < rows.length; i++) {
+            if (rows[i].className != "FooterTable") {
+                table.append(rows[i])
+            }
+        }
+    }
+});
+function comparer(index) {
+    return function(a, b) {
+      var valA = getCellValue(a, index),
+        valB = getCellValue(b, index)
+      return $.isNumeric(valA) && $.isNumeric(valB) ? valA - valB : valA.localeCompare(valB)
+    }
+  }
+
+  function getCellValue(row, index) {
+    return $(row).children('td').eq(index).html()
+  }
+
+
+</script>
+}
