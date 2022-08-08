@@ -12,31 +12,31 @@ namespace CanalesElectronicosAPV.Models.DTO
 
     public class Objetivos
     {
-        [Display(Name = "Nombre:")]
+        [Display(Name = "NOMBRE:")]
         public string? NombreO { get; set; }
-        [Display(Name = "Tipo:")]
+        [Display(Name = "TIPO:")]
         public string? Tipo { get; set; }
-        [Display(Name = "Fecha Meta:")]
+        [Display(Name = "FECHA META:")]
         public string? FechaMeta { get; set; }
-        [Display(Name = "Valor Meta:")]
+        [Display(Name = "VALOR META:")]
         public string? ValorMeta { get; set; }
 
-        [Display(Name = "Saldo Total:")]
+        [Display(Name = "SALDO TOTAL:")]
         public string? Saldo { get; set; }
 
-        [Display(Name = "Nombre:")]
+        [Display(Name = "NOMBRE:")]
         public string? NombreJubilacion { get; set; }
 
-        [Display(Name = "Tipo:")]
+        [Display(Name = "TIPO:")]
         public string? TipoJUbilacion { get; set; }
 
-        [Display(Name = "Fecha Meta:")]
+        [Display(Name = "FECHA META:")]
         public string? FMJubilacion { get; set; }
 
-        [Display(Name = "Valor Meta:")]
+        [Display(Name = "VALOR META:")]
         public string? VMJubilacion { get; set; }
 
-        [Display(Name = "Saldo Total:")]
+        [Display(Name = "SALDO META:")]
         public string? STJubilacion { get; set; }
     }
 
@@ -99,6 +99,7 @@ namespace CanalesElectronicosAPV.Models.DTO
         public string CuentaPreferida { get; set; }
         [Display(Name = "ESTADO DE LA CUENTA EN AFP:")]
         public string EstadoCuenta { get; set; }
+
     }
     public  class ProductosDTO
     {
