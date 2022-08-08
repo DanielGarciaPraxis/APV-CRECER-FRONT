@@ -89,7 +89,7 @@
                 <h2 class="TextCafeOscuroNegrita">OBJETIVOS</h2>
                 <div class="row">
                     <div class="col-sm-5">
-                         <div class="card"  style="width: 550px">
+                         <div class="card"  style="width:550px">
                             <div class="card-header TextWhite">
                                 LIBERTAD FINANCIERA
                             </div>
@@ -118,8 +118,9 @@
                             </div>
                         </div>
                     </div>
+                    <br />
                     <div class="col-sm-3">
-                        <div class="card" style="width: 550px"  >
+                        <div class="card"  style="width: 550px"  >
                             <div class="card-header TextWhite">
                                 JUBILACIÓN ANTICIPADA
                             </div>
@@ -175,7 +176,7 @@
                         }
                         </tbody>
                         <tfoot>
-                            <tr style="background-color: #c7c9c7;">
+                            <tr class="FooterTable" style="background-color:#dbdedc ">
                                 <td class="text-center TextDarkBold">Total</td>
                                 <td class="text-center TextDarkBold">100%</td>
                                 <td class="text-center TextDarkBold">100%</td>
@@ -219,6 +220,7 @@
             <div class="tab-pane fade show active" id="nav-cuentas" role="tabpanel" aria-labelledby="nav-contact-tab">
                 <br />
                 <br />
+
                 <div class="row">
                     <div class="col">
                         <h4 class="Seleccionar" style="margin-left:5px;">CUENTAS BANCARIAS</h4>
@@ -267,20 +269,37 @@
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
             <div class="tab-pane fade" id="nav-saldos" role="tabpanel" aria-labelledby="nav-contact-tab">
                 <br />
-                <br />
-                <div class="row">
-                    <div class="col">
-                        <div class="dropdown">
-                            <button class="dropdown-toggle select-fondo form-control" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Seleccione plan
-                            </button>
+        <div class="row">
+      <div class="col-4"  >
+         <div class="dropdown float-right TextDarkBold" style="width:350px;height:30px;background-color:#ccc">
+                           @Html.DropDownList("items",(IEnumerable<SelectListItem>)ViewBag.items,"Selecciona Plan",htmlAttributes: new{@class="form-select TextDarkBold", style="width:350px;height:40px;background-color:#ccc"})
                         </div>
-                    </div>
-                </div>
+      </div>
+      <div class="col-4"  >
+        @*<input type="date" name="Periodo" id="Periodo"  value="Seleccione Periodo" style="width:270px" />*@
+      </div>
+      <div class="col-4 align-self-end"  ><div class="form-group">
+   
+    <div class="input-group">
+     
+    <input type="date" id="Periodo"  name="Periodo"  class="sm-form-control TextDarkBold" style="width:180px;background-color:#dbdedc ;border:none" placeholder="Fecha Doc." value="Seleccione Periodo">
+      &nbsp;&nbsp;
+      <div class="dropdown TextDarkBold" style="width:250px;height:40px;background-color:#ccc">
+                            
+                             @Html.DropDownList("items",(IEnumerable<SelectListItem>)ViewBag.items,"Objetivo de Ahorro",htmlAttributes: new{@class="form-select TextDarkBold", style="width:250px;height:40px;background-color:#dbdedc"})
+                        </div>
+    </div>
+  </div>
+   
+    
+  </div>
+</div>
+             
                 <br />
                 <br />
                 <h2 class="TextCafeOscuroNegrita">SALDO TOTAL</h2>
@@ -297,25 +316,21 @@
                             </tr>
                         </thead>
                         <tbody>
+                            @foreach(var itemst in Model.SaldosTotales)
+                        {
                             <tr>
                                 <td class="text-center TextDarkBold"><input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"></td>
-                                <td class="text-center TextDarkBold"></td>
-                                <td class="text-center TextDarkBold"></td>
-                                <td class="text-center TextDarkBold"></td>
-                                <td class="text-center TextDarkBold">00.00</td>
-                                <td class="text-center TextDarkBold">00.0000000</td>
+                                <td class="text-center TextDarkBold">@Html.DisplayFor(modelItem => itemst.NumeroCuenta)</td>
+                                <td class="text-center TextDarkBold">@Html.DisplayFor(modelItem => itemst.TipoAhorro)</td>
+                                <td class="text-center TextDarkBold">@Html.DisplayFor(modelItem => itemst.NombreCuenta)</td>
+                                <td class="text-center TextDarkBold">@Html.DisplayFor(modelItem => itemst.SaldoDolares)</td>
+                                <td class="text-center TextDarkBold">@Html.DisplayFor(modelItem => itemst.Unidades)</td>
                             </tr>
-                            <tr>
-                                <td class="text-center TextDarkBold"><input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"></td>
-                                <td class="text-center TextDarkBold"></td>
-                                <td class="text-center TextDarkBold"></td>
-                                <td class="text-center TextDarkBold"></td>
-                                <td class="text-center TextDarkBold">00.00</td>
-                                <td class="text-center TextDarkBold">00.0000000</td>
-                            </tr>
+                        }
+                          
                         </tbody>
                         <tfoot>
-                            <tr clas="TextDarkBold" style="background-color: #c7c9c7;">
+                            <tr class="TextDarkBold" style="background-color: #dbdedc;">
                                 <td class="TextDarkBold" colspan="4">Totales</td>
                                 <td class="TextDarkBold text-center">00.00</td>
                                 <td class="TextDarkBold text-center">00.0000000</td>
@@ -325,7 +340,7 @@
                 </div>
                 <br />
                 <br />
-                <h2 class="TextCafeOscuroNegrita">SALDO TOTAL</h2>
+                <h2 class="TextCafeOscuroNegrita">REPORTE DE MOVIMIENTOS</h2>
                 <div class="table-responsive">
                     <table class="table table-striped">
                         <thead>
@@ -351,22 +366,18 @@
                             </tr>
                         </thead>
                         <tbody>
+                             @foreach(var itemrm in Model.ReporteMovtos)
+                             {
                             <tr>
-                                <td class="text-center TextDarkBold">DD/MM/YY</td>
-                                <td class="text-center TextDarkBold">AHORRO</td>
-                                <td class="text-center TextDarkBold">ACREDITACIÓN</td>
-                                <td class="text-center TextDarkBold">$00.00</td>
-                                <td class="text-center TextDarkBold">0000.00000000</td>
-                                <td class="text-center TextDarkBold">0000.00000000</td>
+                                <td class="text-center TextDarkBold">@Html.DisplayFor(modelItem => itemrm.FechaMovimiento)</td>
+                                <td class="text-center TextDarkBold">@Html.DisplayFor(modelItem => itemrm.NombreObjetivos)</td>
+                                <td class="text-center TextDarkBold">@Html.DisplayFor(modelItem => itemrm.TipoMovto)</td>
+                                <td class="text-center TextDarkBold">@Html.DisplayFor(modelItem => itemrm.ValorMovto)</td>
+                                <td class="text-center TextDarkBold">@Html.DisplayFor(modelItem => itemrm.ValorCuota)</td>
+                                <td class="text-center TextDarkBold">@Html.DisplayFor(modelItem => itemrm.Unidades)</td>
                             </tr>
-                            <tr>
-                                <td class="text-center TextDarkBold">DD/MM/YY</td>
-                                <td class="text-center TextDarkBold">AHORRO</td>
-                                <td class="text-center TextDarkBold">ACREDITACIÓN</td>
-                                <td class="text-center TextDarkBold">$00.00</td>
-                                <td class="text-center TextDarkBold">0000.00000000</td>
-                                <td class="text-center TextDarkBold">0000.00000000</td>
-                            </tr>
+                            }
+                          
                         </tbody>
                     </table>
                 </div>

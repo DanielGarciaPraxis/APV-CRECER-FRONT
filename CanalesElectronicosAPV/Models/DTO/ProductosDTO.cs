@@ -106,10 +106,16 @@ namespace CanalesElectronicosAPV.Models.DTO
         public List<ProductsDTO>? Productos { get; set; }
         public List<Distribucion>? Distribucion { get; set; }
         public List<Beneficiarios>? Beneficiario { get; set; }
+
+        public List<SaldoTotal>? SaldosTotales { get; set; }
+
+        public List<ReporteMovimientos>? ReporteMovtos { get; set; }
         public Objetivos? objetivo {get;set;}
         public Beneficiarios? beneficiarios { get; set; }
         public Distribucion? distribucion { get; set; }
+
         public CuentasBancarias cuentasbancarias { get; set; }
+
 
     }
 

@@ -13,6 +13,9 @@ namespace CanalesElectronicosAPV.Controllers
             CustumerDataDTO dto= new CustumerDataDTO(); 
             ProductosDTO productosDTO = new ProductosDTO();
             List<ProductsDTO> list = new List<ProductsDTO>();
+            List<SaldoTotal> listst = new List<SaldoTotal>();
+            List<ReporteMovimientos> listrm = new List<ReporteMovimientos>();
+
             Models.DTO.ProductsDTO p = new Models.DTO.ProductsDTO();
             Models.DTO.Objetivos objetivo = new Models.DTO.Objetivos();
             CuentasBancarias cuentas = new CuentasBancarias();
@@ -50,6 +53,7 @@ namespace CanalesElectronicosAPV.Controllers
             ViewBag.items = items;
             ViewBag.Distribucion = string.Empty;
             ViewBag.Beneficiarios = string.Empty;
+
 
         
             
@@ -133,20 +137,44 @@ namespace CanalesElectronicosAPV.Controllers
 
             });
 
-            cuentas.EntidadFinanciera = "BANCO PROMERICA S.A";
-            cuentas.TipoCuenta = "CORRIENTE";
-            cuentas.Proposito = "PAGO";
-            cuentas.NumeroCuenta = "XXXXXXXXXXXXX";
-            cuentas.TipoIdentificacion = "DOCUMENTO ÚNICO DE IDENTIFICACIÓN";
-            cuentas.NumeroIdentificacion = "XXXXXXXX";
-            cuentas.CuentaPreferida = "NO";
-            cuentas.EstadoCuenta = "ACTIVA";
 
-            ViewBag.Distribucion = lstdst;
+            for (int i = 0; i < 5; i++)
+                listst.Add(new SaldoTotal
+                {
+                    NumeroCuenta = String.Empty,
+                    TipoAhorro = String.Empty,
+                    NombreCuenta = String.Empty,
+                    SaldoDolares = "00.00",
+                    Unidades =   "00.00000000"
+                });
+            for (int i = 0; i < 6; i++)
+            {
+                listrm.Add(new ReporteMovimientos{
+
+                    FechaMovimiento = "DD/MM/YY",
+                    NombreObjetivos = "AHORRO",
+                    TipoMovto = "ACREDITACIÓN",
+                    ValorMovto = "$00.00",
+                    ValorCuota = "00.00000000", 
+                    Unidades =   "00.00000000"
+
+
+                });
+
+
+            }
+
+
+
+
+                ViewBag.Distribucion = lstdst;
             ViewBag.Beneficiarios = lstbene;
             productosDTO.Distribucion = lstdst;
             productosDTO.Beneficiario = lstbene;
-            productosDTO.cuentasbancarias = cuentas;
+
+            productosDTO.SaldosTotales = listst;
+            productosDTO.ReporteMovtos = listrm; 
+
             return View(productosDTO);
         }
 
