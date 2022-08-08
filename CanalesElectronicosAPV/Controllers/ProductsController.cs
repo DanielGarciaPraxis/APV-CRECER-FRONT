@@ -20,7 +20,7 @@ namespace CanalesElectronicosAPV.Controllers
             Models.DTO.Objetivos objetivo = new Models.DTO.Objetivos();
             CuentasBancarias cuentas = new CuentasBancarias();
             p = new Models.DTO.ProductsDTO();
-            p.LineaProducto = "AHORRO PREVISIONAL VOLUNTARIO CRECER BALANCEADO";
+            p.LineaProducto = "BANCO AHORRO PREVISIONAL VOLUNTARIO CRECER BALANCEADO";
             p.Producto = "1 PLAN INDIVIDUAL - DINÁMICO";
             p.Estado = "ACTIVO";
             p.Saldo = "$00.00";
@@ -32,14 +32,14 @@ namespace CanalesElectronicosAPV.Controllers
             p.Saldo = "$00.00";
             list.Add(p);
             p = new Models.DTO.ProductsDTO();
-            p.LineaProducto = "AHORRO PREVISIONAL VOLUNTARIO CRECER BALANCEADO";
-            p.Producto = "1 PLAN INDIVIDUAL - DINÁMICO";
+            p.LineaProducto = "CRECER AHORRO PREVISIONAL VOLUNTARIO CRECER BALANCEADO";
+            p.Producto = "CRECER: 1 PLAN INDIVIDUAL - DINÁMICO";
             p.Estado = "ACTIVO";
             p.Saldo = "$00.00";
             list.Add(p);
             p = new Models.DTO.ProductsDTO();
             p.LineaProducto = "AHORRO PREVISIONAL VOLUNTARIO CRECER BALANCEADO";
-            p.Producto = "1 PLAN INDIVIDUAL - DINÁMICO";
+            p.Producto = "PRUEBA: 1 PLAN INDIVIDUAL - DINÁMICO";
             p.Estado = "ACTIVO";
             p.Saldo = "$00.00";
             list.Add(p);
