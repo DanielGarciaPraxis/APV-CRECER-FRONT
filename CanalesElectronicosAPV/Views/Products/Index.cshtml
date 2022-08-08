@@ -88,68 +88,67 @@
                 <br />
                 <h2 class="TextCafeOscuroNegrita">OBJETIVOS</h2>
                 <div class="row">
-                    <div class="col-sm-5">
-                         <div class="card"  style="width:550px">
+                     <div class="col-sm-6">
+                         <div class="card" >
                             <div class="card-header TextWhite">
                                 LIBERTAD FINANCIERA
                             </div>
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-md-5 TextDark">@Html.DisplayNameFor(model => model.objetivo.NombreO)</div>
-                                    <div class="col-md-5 TextDarkBold ">@Html.DisplayFor(model => model.objetivo.NombreO)</div>
+                                    <div class="col-md-7 TextDarkBold ">@Html.DisplayFor(model => model.objetivo.NombreO)</div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-5 TextDark"> @Html.DisplayNameFor(model => model.objetivo.Tipo)</div>
-                                    <div class="col-md-5 TextDarkBold">@Html.DisplayFor(model => model.objetivo.Tipo)</div>
+                                    <div class="col-md-7 TextDarkBold">@Html.DisplayFor(model => model.objetivo.Tipo)</div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-5 TextDark"> @Html.DisplayNameFor(model => model.objetivo.FechaMeta)</div>
-                                    <div class="col-md-5 TextDarkBold"> @Html.DisplayFor(model => model.objetivo.FechaMeta)</div>
+                                    <div class="col-md-7 TextDarkBold"> @Html.DisplayFor(model => model.objetivo.FechaMeta)</div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-5 TextDark">@Html.DisplayNameFor(model => model.objetivo.ValorMeta)</div>
-                                    <div class="col-md-5 TextDarkBold">@Html.DisplayFor(model => model.objetivo.ValorMeta)</div>
+                                    <div class="col-md-7 TextDarkBold">@Html.DisplayFor(model => model.objetivo.ValorMeta)</div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-5 TextDark">@Html.DisplayNameFor(model => model.objetivo.Saldo)</div>
-                                    <div class="col-md-4 TextDarkBold">@Html.DisplayFor(model => model.objetivo.Saldo)</div>
+                                    <div class="col-md-7 TextDarkBold">@Html.DisplayFor(model => model.objetivo.Saldo)</div>
                                 </div>
 
                             </div>
                         </div>
                     </div>
                     <br />
-                    <div class="col-sm-3">
-                        <div class="card"  style="width: 550px"  >
+                    <br />
+                     <div class="col-sm-6">
+                        <div class="card"  >
                             <div class="card-header TextWhite">
                                 JUBILACIÓN ANTICIPADA
                             </div>
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-md-5 TextDark"> @Html.DisplayNameFor(model => model.objetivo.NombreJubilacion)</div>
-                                    <div class="col-md-5 TextDarkBold">@Html.DisplayFor(model => model.objetivo.NombreJubilacion)</div>
+                                    <div class="col-md-7 TextDarkBold">@Html.DisplayFor(model => model.objetivo.NombreJubilacion)</div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-5 TextDark"> @Html.DisplayNameFor(model => model.objetivo.TipoJUbilacion)</div>
-                                    <div class="col-md-5 TextDarkBold"> @Html.DisplayFor(model => model.objetivo.TipoJUbilacion)</div>
+                                    <div class="col-md-7 TextDarkBold"> @Html.DisplayFor(model => model.objetivo.TipoJUbilacion)</div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-5 TextDark">@Html.DisplayNameFor(model => model.objetivo.FMJubilacion)</div>
-                                    <div class="col-md-5 TextDarkBold">@Html.DisplayFor(model => model.objetivo.FMJubilacion)</div>
+                                    <div class="col-md-7 TextDarkBold">@Html.DisplayFor(model => model.objetivo.FMJubilacion)</div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-5 TextDark">@Html.DisplayNameFor(model => model.objetivo.VMJubilacion)</div>
-                                    <div class="col-md-5 TextDarkBold">@Html.DisplayFor(model => model.objetivo.VMJubilacion)</div>
+                                    <div class="col-md-7 TextDarkBold">@Html.DisplayFor(model => model.objetivo.VMJubilacion)</div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-5 TextDark"> @Html.DisplayNameFor(model => model.objetivo.STJubilacion)</div>
-                                    <div class="col-md-5 TextDarkBold"> @Html.DisplayFor(model => model.objetivo.STJubilacion)</div>
+                                    <div class="col-md-7 TextDarkBold"> @Html.DisplayFor(model => model.objetivo.STJubilacion)</div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                     <div class="col-sm-4">
-                         </div>
                 </div>
                 <br />
                 <br />
@@ -178,7 +177,7 @@
                         }
                         </tbody>
                         <tfoot>
-                            <tr class="FooterTable" style="background-color:#e3e6e9;">
+                            <tr class="FooterTable" style="border:none">
                                 <td class="text-center TextDarkBold">Total</td>
                                 <td class="text-center TextDarkBold">100%</td>
                                 <td class="text-center TextDarkBold">100%</td>
@@ -275,31 +274,35 @@
                 </div>
             </div>
             <div class="tab-pane fade" id="nav-saldos" role="tabpanel" aria-labelledby="nav-contact-tab">
-                <br />
-        <div class="row">
-      <div class="col-4"  >
-         <div class="dropdown float-right TextDarkBold" style="width:350px;height:30px;background-color:#ccc">
-                           @Html.DropDownList("items",(IEnumerable<SelectListItem>)ViewBag.items,"Selecciona Plan",htmlAttributes: new{@class="form-select TextDarkBold", style="width:350px;height:40px;background-color:#ccc"})
-                        </div>
-      </div>
-      <div class="col-4"  >
-        @*<input type="date" name="Periodo" id="Periodo"  value="Seleccione Periodo" style="width:270px" />*@
-      </div>
-      <div class="col-4 align-self-end"  ><div class="form-group">
+                            <br />
+                             <br />
+
+                 <div class="row">
+                    <div class="col-sm-4" >
+              
+                         <div class="dropdown TextDarkBold" style="width:240px;background-color:#dbdedc">
+                                 @Html.DropDownList("items",(IEnumerable<SelectListItem>)ViewBag.items,"Selecciona Plan",htmlAttributes: new{@class="form-select TextDarkBold", style="width:240px;background-color:#dbdedc"})
+                         </div>
+                    </div>
+                    <div class="col-sm-8" >
+                        <div class="form-group">
    
-    <div class="input-group">
-     
-    <input type="date" id="Periodo"  name="Periodo"  class="sm-form-control TextDarkBold" style="width:180px;background-color:#dbdedc ;border:none" placeholder="Fecha Doc." value="Seleccione Periodo">
-     <span style="width:2px"></span>
-      <div class="dropdown TextDarkBold" style="width:250px;height:40px;background-color:#ccc">
+                            <div class="input-group">
+                             
+                             
+                               <input type="date" id="Periodo"  name="Periodo"  class="form-control TextDarkBold" value="@DateTime.Now.ToString("yyyy-MM-dd")" style="width:50px;background-color:#dbdedc ;border:none;" >
+                                
+                                 <span class="input-group-text" style="background-color:white;border:none; width:50px"></span>
+                              
+                                 <div class="dropdown TextDarkBold float-lg-end" style="width:220px;background-color:#dbdedc">
+                                 @Html.DropDownList("items",(IEnumerable<SelectListItem>)ViewBag.items,"Objetivo de Ahorro",htmlAttributes: new{@class="form-select TextDarkBold", style="width:220px;background-color:#dbdedc"})
                             
-                             @Html.DropDownList("items",(IEnumerable<SelectListItem>)ViewBag.items,"Objetivo de Ahorro",htmlAttributes: new{@class="form-select TextDarkBold", style="width:250px;height:40px;background-color:#dbdedc"})
+                             </div>
                         </div>
-    </div>
-  </div>
-   
-    
-  </div>
+                      
+                  
+                    </div>
+                </div>
 </div>
              
                 <br />
