@@ -148,6 +148,8 @@
                             </div>
                         </div>
                     </div>
+                     <div class="col-sm-4">
+                         </div>
                 </div>
                 <br />
                 <br />
@@ -176,7 +178,7 @@
                         }
                         </tbody>
                         <tfoot>
-                            <tr class="FooterTable" style="background-color:#dbdedc ">
+                            <tr class="FooterTable" style="background-color:#e3e6e9;">
                                 <td class="text-center TextDarkBold">Total</td>
                                 <td class="text-center TextDarkBold">100%</td>
                                 <td class="text-center TextDarkBold">100%</td>
@@ -277,7 +279,7 @@
     <div class="input-group">
      
     <input type="date" id="Periodo"  name="Periodo"  class="sm-form-control TextDarkBold" style="width:180px;background-color:#dbdedc ;border:none" placeholder="Fecha Doc." value="Seleccione Periodo">
-      &nbsp;&nbsp;
+     <span style="width:2px"></span>
       <div class="dropdown TextDarkBold" style="width:250px;height:40px;background-color:#ccc">
                             
                              @Html.DropDownList("items",(IEnumerable<SelectListItem>)ViewBag.items,"Objetivo de Ahorro",htmlAttributes: new{@class="form-select TextDarkBold", style="width:250px;height:40px;background-color:#dbdedc"})
