@@ -151,7 +151,7 @@ namespace CanalesElectronicosAPV.Controllers
             {
                 listrm.Add(new ReporteMovimientos{
 
-                    FechaMovimiento = "DD/MM/YY",
+                    FechaMovimiento = "25/07/2022",
                     NombreObjetivos = "AHORRO",
                     TipoMovto = "ACREDITACIÓN",
                     ValorMovto = "$00.00",
