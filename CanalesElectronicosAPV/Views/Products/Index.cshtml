@@ -34,9 +34,9 @@
                 <br />
                 <br />
                 <div class="row">
-                    <div class="col">
+                    <div class="col-md-5 col-sm-6 col-xl-5 col-lg-5">
                         <div class="dropdown">
-                            @Html.DropDownList("items",(IEnumerable<SelectListItem>)ViewBag.items,"Selecciona Plan",htmlAttributes: new{@class="form-select"})
+                            @Html.DropDownList("items",(IEnumerable<SelectListItem>)ViewBag.items,"Seleccione Plan",htmlAttributes: new{@class="form-select TextDarkBold"})
                         </div>
                     </div>
                 </div>
@@ -220,45 +220,56 @@
             <div class="tab-pane fade show active" id="nav-cuentas" role="tabpanel" aria-labelledby="nav-contact-tab">
                 <br />
                 <br />
-                <h2 class="TextCafeOscuroNegrita">CUENTAS BANCARIAS </h2>
-                <div class="table-responsive">
-                    
-                    <table class="table table-striped">
-                        <thead>
-                            <tr class="text-center" style="background-color: #7a6855 !important; color: white;">
-                                <td class="text-center">ENTIDAD FINANCIERA</td>
-                                <td class="text-center">TIPO DE CUENTABANCARIA</td>
-                                <td class="text-center">PROPÓSITO DE LA CUENTA BANCARIA</td>
-                                <td class="text-center">NÚMERO DE LA CUENTA BANCARIA</td>
-                                <td class="text-center">TIPO DE IDENTIFICACIÓN DEL CLIENTE TITULAR</td>
-                                <td class="text-center">NÚMERO DE IDENTIFICACIÓN DEL CLIENTE TITULAR</td>
-                                <td class="text-center">CUENTA PREFERIDA</td>
-                                <td class="text-center">ESTADO DE LA CUENTA EN AFP</td>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="text-center  TextDarkBold">BANCO PROMERICA S.A</td>
-                                <td class="text-center  TextDarkBold">CORRIENTE</td>
-                                <td class="text-center  TextDarkBold">PAGO</td>
-                                <td class="text-center  TextDarkBold">XXXXXXXXXXXXX</td>
-                                <td class="text-center  TextDarkBold">DOCUMENTO ÚNICO DE IDENTIFICACIÓN</td>
-                                <td class="text-center  TextDarkBold">XXXXXXXX</td>
-                                <td class="text-center  TextDarkBold">NO</td>
-                                <td class="text-center  TextDarkBold">ACTIVA</td>
-                            </tr>
-                            <tr>
-                                <td class="text-center  TextDarkBold">BANCO PROMERICA S.A</td>
-                                <td class="text-center  TextDarkBold">CORRIENTE</td>
-                                <td class="text-center  TextDarkBold">PAGO</td>
-                                <td class="text-center  TextDarkBold">XXXXXXXXXXXXX</td>
-                                <td class="text-center  TextDarkBold">DOCUMENTO ÚNICO DE IDENTIFICACIÓN</td>
-                                <td class="text-center  TextDarkBold">XXXXXXXX</td>
-                                <td class="text-center  TextDarkBold">NO</td>
-                                <td class="text-center  TextDarkBold">ACTIVA</td>
-                            </tr>
-                        </tbody>
-                    </table>
+
+                <div class="row">
+                    <div class="col">
+                        <h4 class="Seleccionar" style="margin-left:5px;">CUENTAS BANCARIAS</h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col seccion-item" style="padding: 20px;">
+                        <div class="row paddingRows">
+                            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-6 col-xxl-6">
+                                @Html.LabelFor(model => model.cuentasbancarias.EntidadFinanciera,htmlAttributes:new{@class="TextDark"})&nbsp;
+                                <label class="TextDarkBold">&nbsp;@Html.DisplayFor(model => model.cuentasbancarias.EntidadFinanciera)</label>                             
+                            </div>
+                            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-6 col-xxl-6">
+                                @Html.LabelFor(model => model.cuentasbancarias.TipoIdentificacion,htmlAttributes:new{@class="TextDark"})&nbsp;
+                                <label class="TextDarkBold">&nbsp;@Html.DisplayFor(model => model.cuentasbancarias.TipoIdentificacion)</label>                             
+                            </div>
+                        </div>
+                        <div class="row paddingRows">
+                            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-6 col-xxl-6">
+                                @Html.LabelFor(model => model.cuentasbancarias.TipoCuenta,htmlAttributes:new{@class="TextDark"})&nbsp;
+                                <label class="TextDarkBold">&nbsp;@Html.DisplayFor(model => model.cuentasbancarias.TipoCuenta)</label>                             
+                            </div>
+                            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-6 col-xxl-6">
+                                @Html.LabelFor(model => model.cuentasbancarias.NumeroIdentificacion,htmlAttributes:new{@class="TextDark"})&nbsp;
+                                <label class="TextDarkBold">&nbsp;@Html.DisplayFor(model => model.cuentasbancarias.NumeroIdentificacion)</label>                             
+                            </div>
+                        </div>
+                        <div class="row paddingRows">
+                            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-6 col-xxl-6">
+                                @Html.LabelFor(model => model.cuentasbancarias.Proposito,htmlAttributes:new{@class="TextDark"})&nbsp;
+                                <label class="TextDarkBold">&nbsp;@Html.DisplayFor(model => model.cuentasbancarias.Proposito)</label>                             
+                            </div>
+                            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-6 col-xxl-6">
+                                @Html.LabelFor(model => model.cuentasbancarias.CuentaPreferida,htmlAttributes:new{@class="TextDark"})&nbsp;
+                                <label class="TextDarkBold">&nbsp;@Html.DisplayFor(model => model.cuentasbancarias.CuentaPreferida)</label>                             
+                            </div>
+                        </div>
+                        <div class="row paddingRows">
+                            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-6 col-xxl-6">
+                                @Html.LabelFor(model => model.cuentasbancarias.NumeroCuenta,htmlAttributes:new{@class="TextDark"})&nbsp;
+                                <label class="TextDarkBold">&nbsp;@Html.DisplayFor(model => model.cuentasbancarias.NumeroCuenta)</label>                             
+                            </div>
+                            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-6 col-xxl-6">
+                                @Html.LabelFor(model => model.cuentasbancarias.EstadoCuenta,htmlAttributes:new{@class="TextDark"})&nbsp;
+                                <label class="TextDarkBold">&nbsp;@Html.DisplayFor(model => model.cuentasbancarias.EstadoCuenta)</label>                             
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
             <div class="tab-pane fade" id="nav-saldos" role="tabpanel" aria-labelledby="nav-contact-tab">
