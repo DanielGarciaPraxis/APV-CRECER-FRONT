@@ -104,6 +104,8 @@ namespace CanalesElectronicosAPV.Models.DTO
         public string? ValorCuota { get; set; }
 
         public string? Unidades{ get; set; }
+
+       // public string? Unidades { get; set; }
     }
     public  class ProductosDTO
     {
