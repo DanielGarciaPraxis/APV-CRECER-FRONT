@@ -1,8 +1,7 @@
 'use strict'
 
 function changeActiveMenu(id) {
-    const el1 = document.querySelector(`[href="${id}"]`);
-    //.classList.toggle("active-custom")
+    const el1 = document.querySelector(`[href="${id}"]`).classList.toggle("active-custom");
 
 }
 function getCustomerData() {
@@ -87,5 +86,5 @@ window.addEventListener('DOMContentLoaded', event => {
     });
 
     changeActiveMenu(window.location.pathname);
-    //getCustomerData();
+    getCustomerData();
 });
