@@ -94,7 +94,7 @@
             @*     <h4 class="Seleccionar" style="margin-left:5px;">OBJETIVOS</h4>*@
                 <div class="row">
                      <div class="col-sm-5" style="width: 27rem;">
-                         <div class="card-deck" >
+                         <div class="card-deck" style="border-block;border:solid; border-block-color: #794035 " >
                             <div class="card-header TextWhite" style="height:55px">
                                 LIBERTAD FINANCIERA
                             </div>
@@ -128,7 +128,7 @@
 
                    </div>
                      <div class="col-sm-5" style="width: 27rem;">
-                        <div class="card-deck"  >
+                       <div class="card-deck" style="border-block;border:solid; border-block-color: #794035 " >
                             <div class="card-header TextWhite" style="height:55px">
                                 JUBILACIÓN ANTICIPADA
                             </div>
@@ -289,6 +289,7 @@
                 </div>
             </div>
             <div class="tab-pane fade" id="nav-saldos" role="tabpanel" aria-labelledby="nav-contact-tab">
+
                 <br />
                 <br />
                 <div class="row">
@@ -307,6 +308,7 @@
                     <div class="col-md-3 col-sm-12 col-xl-3 col-lg-3" >
                         <div class="dropdown TextDarkBold" style="background-color:#dbdedc">
                             @Html.DropDownList("items",(IEnumerable<SelectListItem>)ViewBag.items,"Objetivo de Ahorro",htmlAttributes: new{@class="form-select TextDarkBold", style="background-color:#dbdedc"})
+
                         </div>
                     </div>
                 </div>
@@ -315,11 +317,10 @@
                 <br />
                 <div class="row">
                     <div class="col">
-                        <h4 class="Seleccionar" style="margin-left:5px;">DISTRIBUCIÓN DE APORTES</h4>
+                        <h4 class="Seleccionar" style="margin-left:5px;">SALDO TOTAL</h4>
                     </div>
                 </div>
-               
-                 <h4 class="Seleccionar" style="margin-left:5px;">SALDO TOTAL</h4>
+                   
                 <div class="table-responsive">
                     <table class="table  table-borderless table-striped">
                         <thead>
@@ -348,7 +349,7 @@
                         </tbody>
                         <tfoot>
                             <tr class="TextDarkBold" style="background-color: #dbdedc;">
-                                <td class="TextDarkBold" colspan="4">Totales</td>
+                                <td class="TextDarkBold" colspan="4">TOTALES</td>
                                 <td class="TextDarkBold text-center">00.00</td>
                                 <td class="TextDarkBold text-center">0000.00000000</td>
                             </tr>
