@@ -94,7 +94,7 @@
             @*     <h4 class="Seleccionar" style="margin-left:5px;">OBJETIVOS</h4>*@
                 <div class="row">
                      <div class="col-sm-5" style="width: 27rem;">
-                         <div class="card-deck" >
+                         <div class="card-deck" style="border-block;border:solid; border-block-color: #794035 " >
                             <div class="card-header TextWhite" style="height:55px">
                                 LIBERTAD FINANCIERA
                             </div>
@@ -128,7 +128,7 @@
 
                    </div>
                      <div class="col-sm-5" style="width: 27rem;">
-                        <div class="card-deck"  >
+                       <div class="card-deck" style="border-block;border:solid; border-block-color: #794035 " >
                             <div class="card-header TextWhite" style="height:55px">
                                 JUBILACIÓN ANTICIPADA
                             </div>
@@ -304,8 +304,8 @@
    
                             <div class="input-group">
                              
-                        
-                               <input type="date" id="Periodo"  name="Periodo"  class="form-control TextDarkBold" value="@DateTime.Now.ToString("yyyy-MM-dd")" style="width:90px;background-color:#dbdedc ;border:none;" >
+                                 
+                                 <input type="date" id="Periodo"  name="Periodo"  class="form-control TextDarkBold" value="@DateTime.Now.ToString("yyyy-MM-dd")" style="width:80px;background-color:#dbdedc ;border:none;" placeholder="Escriba Fecha">
                                 
                                  <span class="input-group-text" style="background-color:white;border:none; width:10px"></span>
                               
@@ -324,11 +324,10 @@
                 <br />
                 <div class="row">
                     <div class="col">
-                        <h4 class="Seleccionar" style="margin-left:5px;">DISTRIBUCIÓN DE APORTES</h4>
+                        <h4 class="Seleccionar" style="margin-left:5px;">SALDO TOTAL</h4>
                     </div>
                 </div>
-               
-                 <h4 class="Seleccionar" style="margin-left:5px;">SALDO TOTAL</h4>
+                   
                 <div class="table-responsive">
                     <table class="table  table-borderless table-striped">
                         <thead>
@@ -357,7 +356,7 @@
                         </tbody>
                         <tfoot>
                             <tr class="TextDarkBold" style="background-color: #dbdedc;">
-                                <td class="TextDarkBold" colspan="4">Totales</td>
+                                <td class="TextDarkBold" colspan="4">TOTALES</td>
                                 <td class="TextDarkBold text-center">00.00</td>
                                 <td class="TextDarkBold text-center">0000.00000000</td>
                             </tr>
