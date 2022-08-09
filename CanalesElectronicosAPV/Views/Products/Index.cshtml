@@ -295,8 +295,8 @@
                  <div class="row">
                     <div class="col-sm-7" >
               
-                         <div class="dropdown TextDarkBold" style="width:270px;background-color:#dbdedc">
-                                 @Html.DropDownList("items",(IEnumerable<SelectListItem>)ViewBag.items,"Selecciona Plan",htmlAttributes: new{@class="form-select TextDarkBold", style="width:260px;background-color:#dbdedc"})
+                         <div class="dropdown TextDarkBold" style="width:300px;background-color:#dbdedc">
+                                 @Html.DropDownList("items",(IEnumerable<SelectListItem>)ViewBag.items,"Selecciona Plan",htmlAttributes: new{@class="form-select TextDarkBold", style="width:300px;background-color:#dbdedc"})
                          </div>
                     </div>
                     <div class="col-sm-5" >
@@ -305,12 +305,12 @@
                             <div class="input-group">
                              
                                  
-                                 <input type="date" id="Periodo"  name="Periodo"  class="form-control TextDarkBold" value="@DateTime.Now.ToString("yyyy-MM-dd")" style="width:80px;background-color:#dbdedc ;border:none;" placeholder="Escriba Fecha">
+                                 <input type="date" id="Periodo"  name="Periodo"  class="form-control TextDarkBold" value="@DateTime.Now.ToString("yyyy-MM-dd")" style="width:100px;background-color:#dbdedc ;border:none;" placeholder="Escriba Fecha">
                                 
                                  <span class="input-group-text" style="background-color:white;border:none; width:10px"></span>
-                              
+                             
                                  <div class="dropdown TextDarkBold float-lg-end" style="width:220px;background-color:#dbdedc">
-                                 @Html.DropDownList("items",(IEnumerable<SelectListItem>)ViewBag.items,"Objetivo de Ahorro",htmlAttributes: new{@class="form-select TextDarkBold", style="width:220px;background-color:#dbdedc"})
+                                 @Html.DropDownList("items",(IEnumerable<SelectListItem>)ViewBag.items,"Objetivo de Ahorro",htmlAttributes: new{@class="form-select TextDarkBold", style="width:110px;background-color:#dbdedc"})
                             
                              </div>
                         </div>
