@@ -162,18 +162,18 @@ namespace CanalesElectronicosAPV.Controllers
                     TipoAhorro = String.Empty,
                     NombreCuenta = String.Empty,
                     SaldoDolares = "00.00",
-                    Unidades =   "00.00000000"
+                    Unidades =   "0000.00000000"
                 });
             for (int i = 0; i < 6; i++)
             {
                 listrm.Add(new ReporteMovimientos{
 
-                    FechaMovimiento = "25/07/2022",
+                    FechaMovimiento = "25/07/22",
                     NombreObjetivos = "AHORRO",
                     TipoMovto = "ACREDITACIÓN",
                     ValorMovto = "$00.00",
-                    ValorCuota = "00.00000000", 
-                    Unidades =   "00.00000000"
+                    ValorCuota = "0000.00000000", 
+                    Unidades = "0000.00000000"
 
 
                 });
