@@ -296,8 +296,9 @@ margin-bottom: 15px;
 }
 
 .nav-link {
-color: white !important;
-background-color: #A39382 !important;
+    color: white !important;
+    background-color: #A39382 !important;
+    text-align: left;
 }
 
 .active-custom {
@@ -306,10 +307,11 @@ background-color: #7A6855 !important;
 }
 
 .nav-tabs .nav-link {
-border-top-left-radius: 0rem;
-border-top-right-radius: 2rem;
-padding-bottom:1rem;
-padding-top:1rem;
+    border-top-left-radius: 0rem;
+    border-top-right-radius: 2rem;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    width: 240px;
 }
 
 .card-header {
