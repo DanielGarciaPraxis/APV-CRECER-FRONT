@@ -155,7 +155,7 @@ namespace CanalesElectronicosAPV.Controllers
             });
 
 
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < 6; i++)
                 listst.Add(new SaldoTotal
                 {
                     NumeroCuenta = String.Empty,

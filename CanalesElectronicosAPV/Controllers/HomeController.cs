@@ -1,5 +1,6 @@
 ﻿using CanalesElectronicosAPV.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Diagnostics;
 
 namespace CanalesElectronicosAPV.Controllers
@@ -31,6 +32,14 @@ namespace CanalesElectronicosAPV.Controllers
         public IActionResult VwLogin()
         {
             return View();
+        }
+
+        public IActionResult Contactos()
+        {
+            List<SelectListItem> items = new List<SelectListItem>();
+            ViewBag.items = items;
+            return View(ViewBag.items); 
+
         }
     }
 }
