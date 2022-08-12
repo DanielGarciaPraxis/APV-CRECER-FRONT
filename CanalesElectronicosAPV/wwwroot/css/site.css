@@ -345,6 +345,7 @@ color: #fff;
 
 /*fin estilos ivan*/
 
+/*Estilos Guadalupe*/
 .HeaderTable{
     background-color: #7a6855 !important;
     color: white;
@@ -374,4 +375,12 @@ color: #fff;
 
 .selectfondo {
     background-color: #C7C9C7 !important;
+}
+
+.seccionfondo {
+    background-color: #A39382 !important;
+    border-radius: 5px;
+    font-size: 17px;
+    margin-bottom: 20px;
+    padding: 4px 4px 30px 13px;
 }

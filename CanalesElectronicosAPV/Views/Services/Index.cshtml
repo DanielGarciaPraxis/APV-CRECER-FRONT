@@ -1,0 +1,171 @@
+﻿@model CanalesElectronicosAPV.Models.DTO.ServicesDTO
+@{
+    ViewData["Title"] = "Services";
+}
+<br />
+<div class="row">
+    <div class="col-md-3 col-lg-4 col-xl-2">
+        <h4 class="Seleccionar">
+            Seleccionar Fondo:
+        </h4>
+    </div>
+    <div class="col-md-4">
+        <div class="dropdown">
+            <button class="dropdown-toggle select-fondo" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                FONDO CRECER BALANCEADO
+            </button>
+        </div>
+    </div>
+    <div class="col-md-2 col-lg-2 col-xl-2">
+        <h4 class="Seleccionar">
+            Producto:
+        </h4>
+    </div>
+    <div class="col-md-3">
+        <div class="dropdown">
+            <button class="dropdown-toggle select-fondo" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                PLAN DÍNAMICO
+            </button>
+        </div>
+    </div>
+</div>
+<br />
+<br />
+<div class="row">
+    <div class="col-md-5 col-sm-6 col-xl-5 col-lg-5">
+        <div class="dropdown">
+            @Html.DropDownListFor(model => model.TipoServicio,(IEnumerable<SelectListItem>)ViewBag.TipoServicio,"Seleccione Servicio",htmlAttributes: new{@class="form-select TextDarkBold selectfondo"})
+        </div>
+    </div>
+</div>
+<br />
+<br />
+<div class="row">
+    <div class="col-md-5 col-sm-6 col-xl-5 col-lg-5">
+            <label id="lbltitle" class="TextCafe">Estado de Cuenta</label>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-5 col-sm-5 col-xl-5 col-lg-5" style="padding: 0;" >
+        <div id="divfechas" class="seccion-item" style="padding-left:20px;padding-top:30px;padding-bottom:30px;">
+            <div class="row" id="divedocuenta">                
+                <div class="col-md-8 col-sm-8 col-xl-8 col-lg-8">
+                    @Html.LabelFor(model => model.Periodo,htmlAttributes:new{@class="TextDarkBold"})
+                    <div class="input-group date datepicker">
+                        @Html.TextBoxFor(model => model.Periodo,"Seleccione",htmlAttributes:new{@class="form-control TextDark selectfondo",@style="border-style: none none solid none",@placeholder="Seleccione"})                           
+                        <span class="input-group-addon">
+                            <span class="input-group-text d-block" style="background-color: #C7C9C7; border: none;">
+                                <i class="fa-solid fa-calendar-days"></i>
+                            </span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="row" id="divextractosaldo">                
+                <div class="col-md-8 col-sm-8 col-xl-8 col-lg-8">
+                    @Html.LabelFor(model => model.FechaCorte,htmlAttributes:new{@class="TextDarkBold"})
+                    <div class="input-group date datepicker">
+                        @Html.TextBoxFor(model => model.FechaCorte,"Seleccione",htmlAttributes:new{@class="form-control TextDark selectfondo",@style="border-style: none none solid none",@placeholder="Seleccione"})                           
+                        <span class="input-group-addon">
+                            <span class="input-group-text d-block" style="background-color: #C7C9C7; border: none;">
+                                <i class="fa-solid fa-calendar-days"></i>
+                            </span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="divcarne" style="padding: 4px 4px 4px 13px;">
+            <br />
+            <br />
+            <div class="row">
+                <div class="col-md-12 col-sm-6 col-xl-12 col-lg-12">
+                    <label class="TextDarkBold" style="padding-right:80px;">Ahorro Previsional Voluntario</label>
+                    <label class="TextDarkBold">CRECER</label>
+                </div>                
+            </div>
+            <div class="row seccionfondo">
+                <div class="col-md-8 col-sm-8 col-xl-8 col-lg-8">
+                    <br />
+                    <br />
+                    <div class="row">
+                        <label class="label-x-large TextWhite" style="font-size: 50px;">@Html.DisplayFor(model => model.Nombre)</label>                             
+                    </div>
+                    <br />
+                    <br />
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xl-12 col-lg-12" style="background-color:white;border-radius:13px;padding-top:6px;padding-bottom:6px;">
+                            @Html.LabelFor(model => model.CodigoCliente,htmlAttributes:new{@class="TextDark"})
+                            <label class="TextDark">@Html.DisplayFor(model => model.CodigoCliente)</label>                             
+                        </div>
+                    </div>
+                    <br />
+                    <br />
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xl-12 col-lg-12">
+                            @Html.LabelFor(model => model.NPE,htmlAttributes:new{@class="TextDark"})
+                            <label class="TextDark">@Html.DisplayFor(model => model.NPE)</label>                             
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-10 col-sm-10 col-xl-10 col-lg-10" style="background-color:white;border-radius:13px;padding-top:6px;padding-bottom:6px;">
+                            <img style="width:215px;height:40px;" src="https://i.pinimg.com/originals/8e/91/7d/8e917d56daa4f79d28eaf10108e56e42.png"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-1"></div>
+    <div class="col-md-6 col-sm-6 col-xl-6 col-lg-6" style="position: relative;">
+        <button id="btnGenerar" type="button" class="btn active-custom" style="top: 30%;position: absolute;">GENERAR</button>    
+    </div>
+</div>
+
+@section scripts{
+    <script>
+$(function() {
+    $('.datepicker').datepicker({
+        format:'dd/mm/yyyy',
+        autoclose:true,
+        language:'es'
+    });
+
+});
+        $("#divfechas").hide();
+        $("#divcarne").hide();
+        $("#lbltitle").hide();
+        $("#TipoServicio").change(function() {
+            if ($("#TipoServicio").val() == 1) {
+                $("#lbltitle").text("Estado de cuenta");
+                $("#btnGenerar").text("GENERAR");
+                $("#lbltitle").show();
+                $("#divfechas").show();
+                $("#divedocuenta").show();
+                $("#divextractosaldo").hide();
+                $("#divcarne").hide();
+            } else if ($("#TipoServicio").val() == 2) {
+                $("#lbltitle").text("Extracto de saldo");
+                $("#lbltitle").show();
+                $("#btnGenerar").text("GENERAR");
+                $("#divfechas").show();
+                $("#divedocuenta").hide();
+                $("#divextractosaldo").show();
+                $("#divcarne").hide();
+            } else if ($("#TipoServicio").val() == 3) {
+                $("#lbltitle").text("Carné");
+                $("#lbltitle").show();
+                $("#btnGenerar").text("DESCARGAR");
+                $("#divfechas").hide();
+                $("#divedocuenta").hide();
+                $("#divextractosaldo").hide();
+                $("#divcarne").show();
+            } else {
+                $("#btnGenerar").text("GENERAR");
+                $("#divfechas").hide();
+                $("#divcarne").hide();
+                $("#lbltitle").hide();
+            }
+        });
+    </script>
+}
