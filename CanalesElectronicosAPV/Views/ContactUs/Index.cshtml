@@ -1,0 +1,48 @@
+﻿@model CanalesElectronicosAPV.Models.DTO.ContactUsDTO
+@{
+    ViewData["Title"] = "Contact Us";
+}
+
+<partial name="~/Views/Partials/_ComboFondo.cshtml" />
+<br />
+<br />
+<div class="row">
+    <div class="col-md-6 col-sm-6 col-xl-6 col-lg-6">
+            <label id="lbltitle" class="TextCafe">DATOS DEL CLIENTE</label>
+    </div>
+</div>
+<br />
+<div class="row">
+    <div class="col-md-6 col-sm-6 col-xl-6 col-lg-6">
+        <div class="dropdown">
+            @Html.DropDownListFor(model => model.TipoConsulta,(IEnumerable<SelectListItem>)ViewBag.TpoConsulta,"TIPO DE CONSULTA",htmlAttributes: new{@class="form-select TextDarkBold selectfondo"})
+        </div>
+    </div>
+</div>
+<br />
+<br />
+<div class="row">
+    <div class="col-md-6 col-sm-6 col-xl-6 col-lg-6" >
+        @Html.LabelFor(model => model.Mensaje,htmlAttributes:new{@class="TextDarkBold"})
+        @Html.TextBoxFor(model => model.Mensaje,"Mensaje",htmlAttributes:new{@class="form-control TextDark",@style="border-style: none none solid none"})                           
+    </div>
+</div>
+<br />
+<div class="row">
+    <div class="col-md-6 col-sm-6 col-xl-6 col-lg-6" >
+        <div class="input-group">
+            @Html.TextBoxFor(model => model.Archivo,"Archivo",htmlAttributes:new{@class="form-control TextDark",@type="file",@style="border:none",@placeholder="No se eligió archivo"})                           
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6 col-sm-6 col-xl-6 col-lg-6">
+        <label class="TextDarkBold" style="padding-right:80px;">Archivos soportados con un tamaño máximo de 10MB</label>
+    </div>                
+</div>
+<br />
+<div class="row" style="align-items: center; text-align:center">
+    <div class="col-md-6 col-sm-6 col-xl-6 col-lg-6">
+        <button type="button" class="btn active-custom">Enviar</button>    
+    </div>
+</div>

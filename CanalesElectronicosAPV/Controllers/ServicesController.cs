@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc.Rendering;
 using CanalesElectronicosAPV.Models.DTO;
 
-namespace CanalesElectronicosAPV.Controllers.Login
+namespace CanalesElectronicosAPV.Controllers
 {
     public class ServicesController : Controller
     {
@@ -13,7 +13,7 @@ namespace CanalesElectronicosAPV.Controllers.Login
             services.CodigoCliente = "0791 1000 2494";
             services.NPE = "0791 1000 2494 45";
             List<SelectListItem> lst = new List<SelectListItem>();
-            lst.Add(new SelectListItem() { Text="Estado de Cuenta",Value="1"});
+            lst.Add(new SelectListItem() { Text = "Estado de Cuenta", Value = "1" });
             lst.Add(new SelectListItem() { Text = "Extracto de Saldo", Value = "2" });
             lst.Add(new SelectListItem() { Text = "Carné", Value = "3" });
             ViewBag.TipoServicio = lst;

@@ -4,6 +4,7 @@
     ViewData["Title"] = "Products";
 }
 <br />
+<br />
 @*<div class="row">
     <div class="col-md-3 col-lg-4 col-xl-2">
         <h4 class="Seleccionar">
@@ -19,431 +20,412 @@
     </div>
 </div>*@
 <partial name="~/Views/Partials/_ComboFondo.cshtml" />
-
 <br />
 <div class="row">
-    <div class="col">
-        <nav>
-            <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                <button class="nav-link active " id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-products" type="button" role="tab" aria-controls="nav-home" aria-selected="true">PRODUCTOS</button>
-                <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-obj" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">OBJETIVOS Y BENEFICIARIOS</button>
-                <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-cuentas" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">CUENTAS BANCARIAS</button>
-                <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-saldos" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">SALDOS Y MOVIMIENTOS</button>
-            </div>
-        </nav>
-        <div class="tab-content" id="nav-tabContent">
-            <div class="tab-pane fade  show active" id="nav-products" role="tabpanel" aria-labelledby="nav-home-tab">
-                <br />
-                <br />
-                <div class="row">
-                    <div class="col-md-5 col-sm-6 col-xl-5 col-lg-5">
-                        <div class="dropdown">
-                            @Html.DropDownList("items",(IEnumerable<SelectListItem>)ViewBag.items,"Seleccione Plan",htmlAttributes: new{@class="form-select TextDarkBold selectfondo"})
+    <div class="accordion" id="accordionproductos">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headinghome">  
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHome" aria-expanded="false" aria-controls="collapseHome">
+                    PRODUCTOS
+                </button>
+            </h2>
+            <div id="collapseHome" class="accordion-collapse collapse" aria-labelledby="headinghome" data-bs-parent="#accordionproductos">
+                <div class="accordion-body">
+                    <br />
+                    <br />
+                    <div class="row">
+                        <div class="col-md-5 col-sm-6 col-xl-5 col-lg-5">
+                            <div class="dropdown">
+                                @Html.DropDownList("items",(IEnumerable<SelectListItem>)ViewBag.items,"Seleccione Plan",htmlAttributes: new{@class="form-select TextDarkBold selectfondo"})
+                            </div>
                         </div>
                     </div>
-                </div>
-                <br />
-                <br />
-                <div class="table-responsive">
-                    <table class="table table-borderless table-striped" id="tableProducts">
-                        <thead>
-                            <tr class="text-center HeaderTable">
-                                <th class="text-center">LÍNEA DE PRODUCTO &nbsp;<i class="fa-solid fa-sort"></i></th>
-                                <th class="text-center">PRODUCTO &nbsp;<i class="fa-solid fa-sort"></i></th>
-                                <th class="text-center">ESTADO DEL AFILIADO EN EL PRODUCTO</th>
-                                <th class="text-center">SALDOS</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach (var item in Model.Productos) {
-                                <tr>
-                                    <td class="text-center TextDarkBold">
-                                        @Html.DisplayFor(modelItem => item.LineaProducto)
+                    <br />
+                    <br />
+                    <div class="table-responsive">
+                        <table class="table table-borderless table-striped" id="tableProducts">
+                            <thead>
+                                <tr class="text-center HeaderTable">
+                                    <th class="text-center">LÍNEA DE PRODUCTO &nbsp;<i class="fa-solid fa-sort"></i></th>
+                                    <th class="text-center">PRODUCTO &nbsp;<i class="fa-solid fa-sort"></i></th>
+                                    <th class="text-center">ESTADO DEL AFILIADO EN EL PRODUCTO</th>
+                                    <th class="text-center">SALDOS</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model.Productos) {
+                                    <tr>
+                                        <td class="text-center TextDarkBold">
+                                            @Html.DisplayFor(modelItem => item.LineaProducto)
+                                        </td>
+                                        <td class="text-center TextDarkBold">
+                                            @Html.DisplayFor(modelItem => item.Producto)
+                                        </td>
+                                        <td class="text-center TextDarkBold">
+                                            @Html.DisplayFor(modelItem => item.Estado)
+                                        </td>
+                                        <td class="text-center TextDarkBold">
+                                            @Html.DisplayFor(modelItem => item.Saldo)
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                            <tfoot>
+                                <tr class="FooterTable">
+                                    <td class="TextDarkBold" colspan="3">
+                                        Totales
                                     </td>
-                                    <td class="text-center TextDarkBold">
-                                        @Html.DisplayFor(modelItem => item.Producto)
-                                    </td>
-                                    <td class="text-center TextDarkBold">
-                                        @Html.DisplayFor(modelItem => item.Estado)
-                                    </td>
-                                    <td class="text-center TextDarkBold">
-                                        @Html.DisplayFor(modelItem => item.Saldo)
+                                    <td class="TextDarkBold text-center">$00.00
                                     </td>
                                 </tr>
-                            }
-                        </tbody>
-                        <tfoot>
-                            <tr class="FooterTable">
-                                <td class="TextDarkBold" colspan="3">
-                                    Totales
-                                </td>
-                                <td class="TextDarkBold text-center">$00.00
-                                </td>
-                            </tr>
-                        </tfoot>
-                    </table>
-
-                </div>
-            </div>
-            <div class="tab-pane fade" id="nav-obj" role="tabpanel" aria-labelledby="nav-profile-tab">
-                <br />
-                <br />
-                <div class="row">
-            <div class="col">
-                    <h4 class="Seleccionar" style="margin-left:5px;">OBJETIVOS</h4>
-                </div>
-            </div>
-            @*     <h4 class="Seleccionar" style="margin-left:5px;">OBJETIVOS</h4>*@
-                <div class="row">
-                     <div class="col-sm-5" style="width: 27rem;">
-                         <div class="card-deck" style="border-block;border:solid; border-block-color: #794035 " >
-                            <div class="card-header TextWhite" style="height:55px">
-                                LIBERTAD FINANCIERA
-                            </div>
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-md-5 TextDark =">@Html.DisplayNameFor(model => model.objetivo.NombreO)</div>
-                                    <div class="col-md-7 TextDarkBold ">@Html.DisplayFor(model => model.objetivo.NombreO)</div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-5 TextDark"> @Html.DisplayNameFor(model => model.objetivo.Tipo)</div>
-                                    <div class="col-md-7 TextDarkBold">@Html.DisplayFor(model => model.objetivo.Tipo)</div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-5 TextDark"> @Html.DisplayNameFor(model => model.objetivo.FechaMeta)</div>
-                                    <div class="col-md-7 TextDarkBold"> @Html.DisplayFor(model => model.objetivo.FechaMeta)</div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-5 TextDark">@Html.DisplayNameFor(model => model.objetivo.ValorMeta)</div>
-                                    <div class="col-md-7 TextDarkBold">@Html.DisplayFor(model => model.objetivo.ValorMeta)</div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-5 TextDark">@Html.DisplayNameFor(model => model.objetivo.Saldo)</div>
-                                    <div class="col-md-7 TextDarkBold">@Html.DisplayFor(model => model.objetivo.Saldo)</div>
-                                </div>
-
-                            </div>
-                        </div>
+                            </tfoot>
+                        </table>
                     </div>
-                   <div class="col-sm-4" style="width: 5rem;">
-                       <br />
-
-                   </div>
-                     <div class="col-sm-5" style="width: 27rem;">
-                       <div class="card-deck" style="border-block;border:solid; border-block-color: #794035 " >
-                            <div class="card-header TextWhite" style="height:55px">
-                                JUBILACIÓN ANTICIPADA
-                            </div>
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-md-5 TextDark"> @Html.DisplayNameFor(model => model.objetivo.NombreJubilacion)</div>
-                                    <div class="col-md-7 TextDarkBold">@Html.DisplayFor(model => model.objetivo.NombreJubilacion)</div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-5 TextDark"> @Html.DisplayNameFor(model => model.objetivo.TipoJUbilacion)</div>
-                                    <div class="col-md-7 TextDarkBold"> @Html.DisplayFor(model => model.objetivo.TipoJUbilacion)</div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-5 TextDark">@Html.DisplayNameFor(model => model.objetivo.FMJubilacion)</div>
-                                    <div class="col-md-7 TextDarkBold">@Html.DisplayFor(model => model.objetivo.FMJubilacion)</div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-5 TextDark">@Html.DisplayNameFor(model => model.objetivo.VMJubilacion)</div>
-                                    <div class="col-md-7 TextDarkBold">@Html.DisplayFor(model => model.objetivo.VMJubilacion)</div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-5 TextDark"> @Html.DisplayNameFor(model => model.objetivo.STJubilacion)</div>
-                                    <div class="col-md-7 TextDarkBold"> @Html.DisplayFor(model => model.objetivo.STJubilacion)</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                 </div>
-                <br />
-                <br />
-                <div class="col">
-                    <h4 class="Seleccionar" style="margin-left:5px;">DISTRIBUCIÓN DE APORTES</h4>
-                </div>
-                
-                <div class="table-responsive">
-                    <table class="table  table-borderless table-striped">
-                        <thead>
-                            <tr class="text-center" style="background-color: #7a6855 !important; color: white;">
-                                <td class="text-center">OBJETIVO</td>
-                                <td class="text-center">CONSIGNACIÓN DIRECTA</td>
-                                <td class="text-center">DEDUCCIÓN DE NÓMINA</td>
-                                <td class="text-center">DÉBITO AUTOMATICO</td>
-                            </tr>
-                        </thead>
-                        <tbody>
-                        @foreach(var items in Model.Distribucion)
-                        {
-
-                            <tr>
-                                <td class="text-center TextDarkBold">@Html.DisplayFor(modelItem => items.NObjetivo)</td>
-                                <td class="text-center TextDarkBold">@Html.DisplayFor(modelItem => items.Consignacion)</td>
-                                <td class="text-center TextDarkBold">@Html.DisplayFor(modelItem => items.Deduccion)</td>
-                                <td class="text-center TextDarkBold">@Html.DisplayFor(modelItem => items.Debito)</td>
-                            </tr>
-           
-                        }
-                        </tbody>
-                        <tfoot>
-                            <tr class="FooterTable" style="border:none">
-                                <td class="text-center TextDarkBold">TOTAL</td>
-                                <td class="text-center TextDarkBold">100%</td>
-                                <td class="text-center TextDarkBold">100%</td>
-                                <td class="text-center TextDarkBold">%</td>
-                            </tr>
-                        </tfoot>
-                    </table>
-                </div>
-                <br />
-                <div class="row">
-                    <div class="col">
-                        <h4 class="Seleccionar" style="margin-left:5px;">BENEFICIARIOS</h4>
-                    </div>
-               </div>
-              
-                <div class="table-responsive">
-
-                    <table class="table  table-borderless table-striped">
-                        <thead>
-                            <tr class="text-center" style="background-color: #7a6855 !important; color: white;">
-                                <td class="text-center">NOMBRE</td>
-                                <td class="text-center">PARENTESCO</td>
-                                <td class="text-center">FECHA DE NACIMIENTO</td>
-                                <td class="text-center">SEXO</td>
-                                <td class="text-center">PORCENTAJE</td>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach(var itemb in Model.Beneficiario)
-                            {
-                            <tr>
-                                <td class="text-center  TextDarkBold">@Html.DisplayFor(modelItem => itemb.NombreB)</td>
-                                <td class="text-center  TextDarkBold">@Html.DisplayFor(modelItem => itemb.Parentesco)</td>
-                                <td class="text-center  TextDarkBold">@Html.DisplayFor(modelItem => itemb.FechaNacimiento)</td>
-                                <td class="text-center  TextDarkBold">@Html.DisplayFor(modelItem => itemb.Porcentaje)</td>
-                                <td class="text-center  TextDarkBold">%</td>
-                            </tr>
-                            }
-                        </tbody>
-                    </table>
-                </div>
-
-            </div>
-
-           
-            <div class="tab-pane fade" id="nav-cuentas" role="tabpanel" aria-labelledby="nav-contact-tab">
-                <br />
-                <br />
-
-                <div class="row">
-                    <div class="col">
-                        <h4 class="Seleccionar" style="margin-left:5px;">CUENTAS BANCARIAS</h4>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col seccion-item" style="padding: 20px;">
-                        <div class="row paddingRows">
-                            <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
-                                @Html.LabelFor(model => model.cuentasbancarias.EntidadFinanciera,htmlAttributes:new{@class="TextDark"})
-                                <label class="TextDarkBold">@Html.DisplayFor(model => model.cuentasbancarias.EntidadFinanciera)</label>                             
-                            </div>
-                            <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
-                                @Html.LabelFor(model => model.cuentasbancarias.TipoIdentificacion,htmlAttributes:new{@class="TextDark"})
-                                <label class="TextDarkBold">@Html.DisplayFor(model => model.cuentasbancarias.TipoIdentificacion)</label>                             
-                            </div>
-                        </div>
-                        <div class="row paddingRows">
-                            <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
-                                @Html.LabelFor(model => model.cuentasbancarias.TipoCuenta,htmlAttributes:new{@class="TextDark"})
-                                <label class="TextDarkBold">@Html.DisplayFor(model => model.cuentasbancarias.TipoCuenta)</label>                             
-                            </div>
-                            <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
-                                @Html.LabelFor(model => model.cuentasbancarias.NumeroIdentificacion,htmlAttributes:new{@class="TextDark"})
-                                <label class="TextDarkBold">@Html.DisplayFor(model => model.cuentasbancarias.NumeroIdentificacion)</label>                             
-                            </div>
-                        </div>
-                        <div class="row paddingRows">
-                            <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
-                                @Html.LabelFor(model => model.cuentasbancarias.Proposito,htmlAttributes:new{@class="TextDark"})
-                                <label class="TextDarkBold">@Html.DisplayFor(model => model.cuentasbancarias.Proposito)</label>                             
-                            </div>
-                            <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
-                                @Html.LabelFor(model => model.cuentasbancarias.CuentaPreferida,htmlAttributes:new{@class="TextDark"})
-                                <label class="TextDarkBold">@Html.DisplayFor(model => model.cuentasbancarias.CuentaPreferida)</label>                             
-                            </div>
-                        </div>
-                        <div class="row paddingRows">
-                            <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
-                                @Html.LabelFor(model => model.cuentasbancarias.NumeroCuenta,htmlAttributes:new{@class="TextDark"})
-                                <label class="TextDarkBold">@Html.DisplayFor(model => model.cuentasbancarias.NumeroCuenta)</label>                             
-                            </div>
-                            <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
-                                @Html.LabelFor(model => model.cuentasbancarias.EstadoCuenta,htmlAttributes:new{@class="TextDark"})
-                                <label class="TextDarkBold">@Html.DisplayFor(model => model.cuentasbancarias.EstadoCuenta)</label>                             
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-            <div class="tab-pane fade" id="nav-saldos" role="tabpanel" aria-labelledby="nav-contact-tab">
-
-                <br />
-                <br />
-                <div class="row">
-                    <div class="col-md-5 col-sm-12 col-xl-5 col-lg-5">              
-                         <div class="dropdown TextDarkBold">
-                                 @Html.DropDownList("items",(IEnumerable<SelectListItem>)ViewBag.items,"Seleccione Plan",htmlAttributes: new{@class="form-select TextDarkBold selectfondo"})
-                         </div>
-                    </div>
-                    <div class="col-md-1 col-sm-12 col-xl-1 col-lg-1">
-                    </div>
-                    <div class="col-md-3 col-sm-12 col-xl-3 col-lg-3">
-                        <div class="input-group">
-                            <input type="date" id="Periodo"  name="Periodo"  class="form-control TextDarkBold selectfondo" value="@DateTime.Now.ToString("yyyy-MM-dd")" >
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-12 col-xl-3 col-lg-3" >
-                        <div class="dropdown TextDarkBold">
-                            @Html.DropDownList("items",(IEnumerable<SelectListItem>)ViewBag.items,"Objetivo de Ahorro",htmlAttributes: new{@class="form-select TextDarkBold selectfondo"})
-
-                        </div>
-                    </div>
-                </div>
-             
-                <br />
-                <br />
-                <div class="row">
-                    <div class="col">
-                        <h4 class="Seleccionar" style="margin-left:5px;">SALDO TOTAL</h4>
-                    </div>
-                </div>
-                   
-                <div class="table-responsive">
-                    <table class="table  table-borderless table-striped">
-                        <thead>
-                            <tr class="text-center" style="background-color: #7a6855 !important; color: white;">
-                                <td class="text-center"></td>
-                                <td class="text-center">NÚMERO CUENTA</td>
-                                <td class="text-center">TIPO AHORRO OBJETIVO</td>
-                                <td class="text-center">NOMBRE CUENTA</td>
-                                <td class="text-center">SALDO EN DOLARES</td>
-                                <td class="text-center">SALDO EN UNIDADES</td>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach(var itemst in Model.SaldosTotales)
-                        {
-                            <tr>
-                                <td class="text-center TextDarkBold"><input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"></td>
-                                <td class="text-center TextDarkBold">@Html.DisplayFor(modelItem => itemst.NumeroCuenta)</td>
-                                <td class="text-center TextDarkBold">@Html.DisplayFor(modelItem => itemst.TipoAhorro)</td>
-                                <td class="text-center TextDarkBold">@Html.DisplayFor(modelItem => itemst.NombreCuenta)</td>
-                                <td class="text-center TextDarkBold">@Html.DisplayFor(modelItem => itemst.SaldoDolares)</td>
-                                <td class="text-center TextDarkBold">@Html.DisplayFor(modelItem => itemst.Unidades)</td>
-                            </tr>
-                        }
-                          
-                        </tbody>
-                        <tfoot>
-                         <tr class="FooterTable">
-                                <td class="TextDarkBold" colspan="4">TOTALES</td>
-                                <td class="TextDarkBold text-center">00.00</td>
-                                <td class="TextDarkBold text-center">0000.00000000</td>
-                         </tr>
-                        </tfoot>
-                    </table>
-                </div>
-                <br />
-                <br />
-                <div class="row">
-                    <div class="col">
-                        <h4 class="Seleccionar" style="margin-left:5px;">REPORTE DE MOVIMIENTOS</h4>
-                    </div>
-                </div>
-               
-                <div class="table-responsive">
-                    <table class="table table-borderless table-striped">
-                        <thead>
-                            <tr class="text-center" style="background-color: #7a6855 !important; color: white;">
-                                <td class="text-center">FECHA DE MOVIMIENTO</td>
-                                <td class="text-center">NOMBRE DEL OBJETIVO DE AHORRO</td>
-                                <td class="text-center">
-                                    TIPO DE
-                                    MOVIMIENTO
-                                </td>
-                                <td class="text-center">
-                                    VALOR DE
-                                    MOVIMIENTO
-                                </td>
-                                <td class="text-center">
-                                    VALOR CUOTA DE LA
-                                    FECHA DEL MOVIMIENTO
-                                </td>
-                                <td class="text-center">
-                                    UNIDADES
-                                    COMPRADAS/RETIRADAS
-                                </td>
-                            </tr>
-                        </thead>
-                        <tbody>
-                             @foreach(var itemrm in Model.ReporteMovtos)
-                             {
-                            <tr>
-                                <td class="text-center TextDarkBold">@Html.DisplayFor(modelItem => itemrm.FechaMovimiento)</td>
-                                <td class="text-center TextDarkBold">@Html.DisplayFor(modelItem => itemrm.NombreObjetivos)</td>
-                                <td class="text-center TextDarkBold">@Html.DisplayFor(modelItem => itemrm.TipoMovto)</td>
-                                <td class="text-center TextDarkBold">@Html.DisplayFor(modelItem => itemrm.ValorMovto)</td>
-                                <td class="text-center TextDarkBold">@Html.DisplayFor(modelItem => itemrm.ValorCuota)</td>
-                                <td class="text-center TextDarkBold">@Html.DisplayFor(modelItem => itemrm.Unidades)</td>
-                            </tr>
-                            }
-                          
-                        </tbody>
-                    </table>
                 </div>
             </div>
         </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingobj">  
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseObj" aria-expanded="false" aria-controls="collapseObj">
+                    OBJETIVOS Y BENEFICIARIOS
+                </button>
+            </h2>
+            <div id="collapseObj" class="accordion-collapse collapse" aria-labelledby="headingobj" data-bs-parent="#accordionproductos">
+                <div class="accordion-body">
+                    <br />
+                    <br />
+                    <div class="row">
+                        <div class="col">
+                            <h4 class="Seleccionar" style="margin-left:5px;">OBJETIVOS</h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-5" style="width: 27rem;">
+                            <div class="card-deck" style="border-block;border:solid; border-block-color: #794035 ">
+                                <div class="card-header TextWhite" style="height:55px">
+                                    LIBERTAD FINANCIERA
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-5 TextDark =">@Html.DisplayNameFor(model => model.objetivo.NombreO)</div>
+                                        <div class="col-md-7 TextDarkBold ">@Html.DisplayFor(model => model.objetivo.NombreO)</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-5 TextDark"> @Html.DisplayNameFor(model => model.objetivo.Tipo)</div>
+                                        <div class="col-md-7 TextDarkBold">@Html.DisplayFor(model => model.objetivo.Tipo)</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-5 TextDark"> @Html.DisplayNameFor(model => model.objetivo.FechaMeta)</div>
+                                        <div class="col-md-7 TextDarkBold"> @Html.DisplayFor(model => model.objetivo.FechaMeta)</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-5 TextDark">@Html.DisplayNameFor(model => model.objetivo.ValorMeta)</div>
+                                        <div class="col-md-7 TextDarkBold">@Html.DisplayFor(model => model.objetivo.ValorMeta)</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-5 TextDark">@Html.DisplayNameFor(model => model.objetivo.Saldo)</div>
+                                        <div class="col-md-7 TextDarkBold">@Html.DisplayFor(model => model.objetivo.Saldo)</div>
+                                    </div>
 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4" style="width: 5rem;">
+                            <br />
+
+                        </div>
+                        <div class="col-sm-5" style="width: 27rem;">
+                            <div class="card-deck" style="border-block;border:solid; border-block-color: #794035 ">
+                                <div class="card-header TextWhite" style="height:55px">
+                                    JUBILACIÓN ANTICIPADA
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-5 TextDark"> @Html.DisplayNameFor(model => model.objetivo.NombreJubilacion)</div>
+                                        <div class="col-md-7 TextDarkBold">@Html.DisplayFor(model => model.objetivo.NombreJubilacion)</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-5 TextDark"> @Html.DisplayNameFor(model => model.objetivo.TipoJUbilacion)</div>
+                                        <div class="col-md-7 TextDarkBold"> @Html.DisplayFor(model => model.objetivo.TipoJUbilacion)</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-5 TextDark">@Html.DisplayNameFor(model => model.objetivo.FMJubilacion)</div>
+                                        <div class="col-md-7 TextDarkBold">@Html.DisplayFor(model => model.objetivo.FMJubilacion)</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-5 TextDark">@Html.DisplayNameFor(model => model.objetivo.VMJubilacion)</div>
+                                        <div class="col-md-7 TextDarkBold">@Html.DisplayFor(model => model.objetivo.VMJubilacion)</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-5 TextDark"> @Html.DisplayNameFor(model => model.objetivo.STJubilacion)</div>
+                                        <div class="col-md-7 TextDarkBold"> @Html.DisplayFor(model => model.objetivo.STJubilacion)</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <br />
+                    <div class="col">
+                        <h4 class="Seleccionar" style="margin-left:5px;">DISTRIBUCIÓN DE APORTES</h4>
+                    </div>
+
+                    <div class="table-responsive">
+                        <table class="table  table-borderless table-striped">
+                            <thead>
+                                <tr class="text-center" style="background-color: #7a6855 !important; color: white;">
+                                    <td class="text-center">OBJETIVO</td>
+                                    <td class="text-center">CONSIGNACIÓN DIRECTA</td>
+                                    <td class="text-center">DEDUCCIÓN DE NÓMINA</td>
+                                    <td class="text-center">DÉBITO AUTOMATICO</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var items in Model.Distribucion)
+                                {
+
+                                    <tr>
+                                        <td class="text-center TextDarkBold">@Html.DisplayFor(modelItem => items.NObjetivo)</td>
+                                        <td class="text-center TextDarkBold">@Html.DisplayFor(modelItem => items.Consignacion)</td>
+                                        <td class="text-center TextDarkBold">@Html.DisplayFor(modelItem => items.Deduccion)</td>
+                                        <td class="text-center TextDarkBold">@Html.DisplayFor(modelItem => items.Debito)</td>
+                                    </tr>
+
+                                }
+                            </tbody>
+                            <tfoot>
+                                <tr class="FooterTable" style="border:none">
+                                    <td class="text-center TextDarkBold">TOTAL</td>
+                                    <td class="text-center TextDarkBold">100%</td>
+                                    <td class="text-center TextDarkBold">100%</td>
+                                    <td class="text-center TextDarkBold">%</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <br />
+                    <div class="row">
+                        <div class="col">
+                            <h4 class="Seleccionar" style="margin-left:5px;">BENEFICIARIOS</h4>
+                        </div>
+                    </div>
+
+                    <div class="table-responsive">
+
+                        <table class="table  table-borderless table-striped">
+                            <thead>
+                                <tr class="text-center" style="background-color: #7a6855 !important; color: white;">
+                                    <td class="text-center">NOMBRE</td>
+                                    <td class="text-center">PARENTESCO</td>
+                                    <td class="text-center">FECHA DE NACIMIENTO</td>
+                                    <td class="text-center">SEXO</td>
+                                    <td class="text-center">PORCENTAJE</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var itemb in Model.Beneficiario)
+                                {
+                                    <tr>
+                                        <td class="text-center  TextDarkBold">@Html.DisplayFor(modelItem => itemb.NombreB)</td>
+                                        <td class="text-center  TextDarkBold">@Html.DisplayFor(modelItem => itemb.Parentesco)</td>
+                                        <td class="text-center  TextDarkBold">@Html.DisplayFor(modelItem => itemb.FechaNacimiento)</td>
+                                        <td class="text-center  TextDarkBold">@Html.DisplayFor(modelItem => itemb.Porcentaje)</td>
+                                        <td class="text-center  TextDarkBold">%</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingcuentas">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCuentas" aria-expanded="false" aria-controls="collapseCuentas">
+                    CUENTAS BANCARIAS
+                </button>
+            </h2>
+            <div id="collapseCuentas" class="accordion-collapse collapse" aria-labelledby="headingcuentas" data-bs-parent="#accordionproductos">
+                <div class="accordion-body">
+                    <br />
+                    <br />
+                    <div class="row">
+                        <div class="col">
+                            <h4 class="Seleccionar" style="margin-left:5px;">CUENTAS BANCARIAS</h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col seccion-item" style="padding: 20px;">
+                            <div class="row paddingRows">
+                                <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                                    @Html.LabelFor(model => model.cuentasbancarias.EntidadFinanciera,htmlAttributes:new{@class="TextDark"})
+                                    <label class="TextDarkBold">@Html.DisplayFor(model => model.cuentasbancarias.EntidadFinanciera)</label>
+                                </div>
+                                <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                                    @Html.LabelFor(model => model.cuentasbancarias.TipoIdentificacion,htmlAttributes:new{@class="TextDark"})
+                                    <label class="TextDarkBold">@Html.DisplayFor(model => model.cuentasbancarias.TipoIdentificacion)</label>
+                                </div>
+                            </div>
+                            <div class="row paddingRows">
+                                <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                                    @Html.LabelFor(model => model.cuentasbancarias.TipoCuenta,htmlAttributes:new{@class="TextDark"})
+                                    <label class="TextDarkBold">@Html.DisplayFor(model => model.cuentasbancarias.TipoCuenta)</label>
+                                </div>
+                                <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                                    @Html.LabelFor(model => model.cuentasbancarias.NumeroIdentificacion,htmlAttributes:new{@class="TextDark"})
+                                    <label class="TextDarkBold">@Html.DisplayFor(model => model.cuentasbancarias.NumeroIdentificacion)</label>
+                                </div>
+                            </div>
+                            <div class="row paddingRows">
+                                <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                                    @Html.LabelFor(model => model.cuentasbancarias.Proposito,htmlAttributes:new{@class="TextDark"})
+                                    <label class="TextDarkBold">@Html.DisplayFor(model => model.cuentasbancarias.Proposito)</label>
+                                </div>
+                                <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                                    @Html.LabelFor(model => model.cuentasbancarias.CuentaPreferida,htmlAttributes:new{@class="TextDark"})
+                                    <label class="TextDarkBold">@Html.DisplayFor(model => model.cuentasbancarias.CuentaPreferida)</label>
+                                </div>
+                            </div>
+                            <div class="row paddingRows">
+                                <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                                    @Html.LabelFor(model => model.cuentasbancarias.NumeroCuenta,htmlAttributes:new{@class="TextDark"})
+                                    <label class="TextDarkBold">@Html.DisplayFor(model => model.cuentasbancarias.NumeroCuenta)</label>
+                                </div>
+                                <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                                    @Html.LabelFor(model => model.cuentasbancarias.EstadoCuenta,htmlAttributes:new{@class="TextDark"})
+                                    <label class="TextDarkBold">@Html.DisplayFor(model => model.cuentasbancarias.EstadoCuenta)</label>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingsaldos">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSaldos" aria-expanded="false" aria-controls="collapseSaldos">
+                    SALDOS Y MOVIMIENTOS
+                </button>
+            </h2>
+            <div id="collapseSaldos" class="accordion-collapse collapse" aria-labelledby="headingsaldos" data-bs-parent="#accordionproductos">
+                <div class="accordion-body">
+                    <br />
+                    <br />
+                    <div class="row">
+                        <div class="col-md-5 col-sm-12 col-xl-5 col-lg-5">
+                            <div class="dropdown TextDarkBold">
+                                @Html.DropDownList("items",(IEnumerable<SelectListItem>)ViewBag.items,"Seleccione Plan",htmlAttributes: new{@class="form-select TextDarkBold selectfondo"})
+                            </div>
+                        </div>
+                        <div class="col-md-1 col-sm-12 col-xl-1 col-lg-1">
+                        </div>
+                        <div class="col-md-3 col-sm-12 col-xl-3 col-lg-3">
+                            <div class="input-group">
+                                <input type="date" id="Periodo" name="Periodo" class="form-control TextDarkBold selectfondo" value="@DateTime.Now.ToString("yyyy-MM-dd")">
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-12 col-xl-3 col-lg-3">
+                            <div class="dropdown TextDarkBold">
+                                @Html.DropDownList("items",(IEnumerable<SelectListItem>)ViewBag.items,"Objetivo de Ahorro",htmlAttributes: new{@class="form-select TextDarkBold selectfondo"})
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <br />
+                    <br />
+                    <div class="row">
+                        <div class="col">
+                            <h4 class="Seleccionar" style="margin-left:5px;">SALDO TOTAL</h4>
+                        </div>
+                    </div>
+
+                    <div class="table-responsive">
+                        <table class="table  table-borderless table-striped">
+                            <thead>
+                                <tr class="text-center" style="background-color: #7a6855 !important; color: white;">
+                                    <td class="text-center"></td>
+                                    <td class="text-center">NÚMERO CUENTA</td>
+                                    <td class="text-center">TIPO AHORRO OBJETIVO</td>
+                                    <td class="text-center">NOMBRE CUENTA</td>
+                                    <td class="text-center">SALDO EN DOLARES</td>
+                                    <td class="text-center">SALDO EN UNIDADES</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var itemst in Model.SaldosTotales)
+                                {
+                                    <tr>
+                                        <td class="text-center TextDarkBold"><input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"></td>
+                                        <td class="text-center TextDarkBold">@Html.DisplayFor(modelItem => itemst.NumeroCuenta)</td>
+                                        <td class="text-center TextDarkBold">@Html.DisplayFor(modelItem => itemst.TipoAhorro)</td>
+                                        <td class="text-center TextDarkBold">@Html.DisplayFor(modelItem => itemst.NombreCuenta)</td>
+                                        <td class="text-center TextDarkBold">@Html.DisplayFor(modelItem => itemst.SaldoDolares)</td>
+                                        <td class="text-center TextDarkBold">@Html.DisplayFor(modelItem => itemst.Unidades)</td>
+                                    </tr>
+                                }
+
+                            </tbody>
+                            <tfoot>
+                                <tr class="FooterTable">
+                                    <td class="TextDarkBold" colspan="4">TOTALES</td>
+                                    <td class="TextDarkBold text-center">00.00</td>
+                                    <td class="TextDarkBold text-center">0000.00000000</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <br />
+                    <br />
+                    <div class="row">
+                        <div class="col">
+                            <h4 class="Seleccionar" style="margin-left:5px;">REPORTE DE MOVIMIENTOS</h4>
+                        </div>
+                    </div>
+
+                    <div class="table-responsive">
+                        <table class="table table-borderless table-striped">
+                            <thead>
+                                <tr class="text-center" style="background-color: #7a6855 !important; color: white;">
+                                    <td class="text-center">FECHA DE MOVIMIENTO</td>
+                                    <td class="text-center">NOMBRE DEL OBJETIVO DE AHORRO</td>
+                                    <td class="text-center">
+                                        TIPO DE
+                                        MOVIMIENTO
+                                    </td>
+                                    <td class="text-center">
+                                        VALOR DE
+                                        MOVIMIENTO
+                                    </td>
+                                    <td class="text-center">
+                                        VALOR CUOTA DE LA
+                                        FECHA DEL MOVIMIENTO
+                                    </td>
+                                    <td class="text-center">
+                                        UNIDADES
+                                        COMPRADAS/RETIRADAS
+                                    </td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var itemrm in Model.ReporteMovtos)
+                                {
+                                    <tr>
+                                        <td class="text-center TextDarkBold">@Html.DisplayFor(modelItem => itemrm.FechaMovimiento)</td>
+                                        <td class="text-center TextDarkBold">@Html.DisplayFor(modelItem => itemrm.NombreObjetivos)</td>
+                                        <td class="text-center TextDarkBold">@Html.DisplayFor(modelItem => itemrm.TipoMovto)</td>
+                                        <td class="text-center TextDarkBold">@Html.DisplayFor(modelItem => itemrm.ValorMovto)</td>
+                                        <td class="text-center TextDarkBold">@Html.DisplayFor(modelItem => itemrm.ValorCuota)</td>
+                                        <td class="text-center TextDarkBold">@Html.DisplayFor(modelItem => itemrm.Unidades)</td>
+                                    </tr>
+                                }
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
-
-@section Scripts {
-
-<script>
-$('th').click(function() {
-    if ($(this).index() <= 1) {
-        var table = $(this).parents('table').eq(0)
-
-        var rows = table.find('tr:gt(0)').toArray().sort(comparer($(this).index()))
-        console.log(rows);
-        this.asc = !this.asc
-        if (!this.asc) {
-            rows = rows.reverse()
-        }
-        for (var i = 0; i < rows.length; i++) {
-            if (rows[i].className != "FooterTable") {
-                table.append(rows[i])
-            }
-        }
-    }
-});
-function comparer(index) {
-    return function(a, b) {
-      var valA = getCellValue(a, index),
-        valB = getCellValue(b, index)
-      return $.isNumeric(valA) && $.isNumeric(valB) ? valA - valB : valA.localeCompare(valB)
-    }
-  }
-
-  function getCellValue(row, index) {
-    return $(row).children('td').eq(index).html()
-  }
-
-
-</script>
-}
