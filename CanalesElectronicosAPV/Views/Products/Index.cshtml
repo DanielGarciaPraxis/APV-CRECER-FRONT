@@ -25,11 +25,11 @@
     <div class="accordion" id="accordionproductos">
         <div class="accordion-item">
             <h2 class="accordion-header" id="headinghome">  
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHome" aria-expanded="false" aria-controls="collapseHome">
+                <button class="accordion-button accordion-button_custom" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHome" aria-expanded="true" aria-controls="collapseHome">
                     PRODUCTOS
                 </button>
             </h2>
-            <div id="collapseHome" class="accordion-collapse collapse" aria-labelledby="headinghome" data-bs-parent="#accordionproductos">
+            <div id="collapseHome" class="accordion-collapse collapse show" aria-labelledby="headinghome" data-bs-parent="#accordionproductos">
                 <div class="accordion-body">
                     <br />
                     <br />
@@ -86,7 +86,7 @@
         </div>
         <div class="accordion-item">
             <h2 class="accordion-header" id="headingobj">  
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseObj" aria-expanded="false" aria-controls="collapseObj">
+                <button class="accordion-button accordion-button_custom collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseObj" aria-expanded="false" aria-controls="collapseObj">
                     OBJETIVOS Y BENEFICIARIOS
                 </button>
             </h2>
@@ -241,7 +241,7 @@
         </div>
         <div class="accordion-item">
             <h2 class="accordion-header" id="headingcuentas">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCuentas" aria-expanded="false" aria-controls="collapseCuentas">
+                <button class="accordion-button accordion-button_custom collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCuentas" aria-expanded="false" aria-controls="collapseCuentas">
                     CUENTAS BANCARIAS
                 </button>
             </h2>
@@ -304,7 +304,7 @@
         </div>
         <div class="accordion-item">
             <h2 class="accordion-header" id="headingsaldos">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSaldos" aria-expanded="false" aria-controls="collapseSaldos">
+                <button class="accordion-button accordion-button_custom collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSaldos" aria-expanded="false" aria-controls="collapseSaldos">
                     SALDOS Y MOVIMIENTOS
                 </button>
             </h2>
@@ -429,3 +429,74 @@
         </div>
     </div>
 </div>
+
+@section Scripts {
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+           const collection = document.getElementsByClassName("accordion-collapse");
+            for (let button of collection) {
+                if (button.classList.contains("show")) {
+                    button.parentNode.children[0].children[0].classList.add("accordion-button_custom_active");
+                } else {
+                     button.parentNode.children[0].children[0].classList.remove("accordion-button_custom_active");
+                }
+            }
+        });
+
+        window.addEventListener("resize", function() {
+            const collection2 = document.getElementsByClassName("accordion-collapse");
+            for (let button2 of collection2) {
+                if (button2.classList.contains("show")) {
+                    button2.classList.remove("show");
+                } 
+                if (button2.parentNode.children[0].children[0].classList.contains("accordion-button_custom_active")) {
+                    button2.parentNode.children[0].children[0].classList.remove("accordion-button_custom_active");
+                }
+                button2.parentNode.children[0].children[0].classList.remove("accordion-button_custom");
+
+            }   
+            if (screen.width > 820) {
+                document.getElementById("collapseHome").classList.add("show");
+                document.getElementById("collapseHome").parentNode.children[0].children[0].classList.add("accordion-button_custom_active");
+            }
+        });
+
+        document.querySelector("#accordionproductos").addEventListener('show.bs.collapse', function(e) {
+            e.target.parentNode.children[0].children[0].classList.add("accordion-button_custom_active");
+        });
+        document.querySelector("#accordionproductos").addEventListener('hide.bs.collapse', function(e) {
+            e.target.parentNode.children[0].children[0].classList.remove("accordion-button_custom_active");
+        });
+
+        //Ordenamiento de columnas
+        $('th').click(function() {
+            if ($(this).index() <= 1) {
+                var table = $(this).parents('table').eq(0)
+
+                var rows = table.find('tr:gt(0)').toArray().sort(comparer($(this).index()))
+                this.asc = !this.asc
+                if (!this.asc) {
+                    rows = rows.reverse()
+                }
+                for (var i = 0; i < rows.length; i++) {
+                    if (rows[i].className != "FooterTable") {
+                        table.append(rows[i])
+                    }
+                }
+            }
+        });
+        function comparer(index) {
+            return function(a, b) {
+                var valA = getCellValue(a, index),
+                    valB = getCellValue(b, index)
+                return $.isNumeric(valA) && $.isNumeric(valB) ? valA - valB : valA.localeCompare(valB)
+            }
+        }
+
+        function getCellValue(row, index) {
+            return $(row).children('td').eq(index).html()
+        }
+
+
+    </script>
+}
