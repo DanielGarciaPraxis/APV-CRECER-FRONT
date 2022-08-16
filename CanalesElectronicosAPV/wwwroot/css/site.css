@@ -386,27 +386,33 @@ color: #fff;
     margin-bottom: 20px;
     padding: 4px 4px 30px 13px;
 }
+.accordion-button:focus {
+    box-shadow: 0 0 0 0.25rem rgb(163 147 130 / 25%) !important;
+    border-color: white !important;
+}
+.accordion-button_custom:hover {
+    background-color: #7A6855 !important;
+    border-color: white;
+}
 .accordion-button {
     color: white !important;
     background-color: #A39382 !important;
     text-align: left;
+    border-style: none none solid none;
+    border-color: white;
+    border-width: 1px;
 }
-
-    .accordion-button:not(.collapsed) {
-        color: white !important;
-        background-color: #A39382 !important;
-        text-align: left;
-    }
-
-    .accordion-button:focus {
-        color: white !important;
+.accordion-button_custom_active {
+    color: white !important;
+    background-color: #7A6855 !important;
+    box-shadow: 0 0 0 0.25rem rgb(163 147 130 / 25%) !important;
+}
+    .accordion-button_custom_active:focus {
         background-color: #7A6855 !important;
-        box-shadow: 0 0 0 0.25rem rgb(163 147 130 / 25%);
+        box-shadow: 0 0 0 0.25rem rgb(163 147 130 / 25%) !important;
+        border-color: white !important;
     }
-    .accordion-button:hover {
-        color: white !important;
-        background-color: #7A6855 !important;
-    }
+
     .accordion-button::after {
         background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
     }
