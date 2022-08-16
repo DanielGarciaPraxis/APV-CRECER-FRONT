@@ -30,9 +30,9 @@
 <br />
 <div class="row">
     <div class="col-md-6 col-sm-6 col-xl-6 col-lg-6" >
-        <div class="input-group">
-            @Html.TextBoxFor(model => model.Archivo,"Archivo",htmlAttributes:new{@class="form-control TextDark",@type="file",@style="border:none",@placeholder="No se eligió archivo"})                           
-        </div>
+            <button class="btn btn-primary btnFile TextDarkBold" id="btn_FileInput">Elegir Archivos</button>
+            <label class="TextDark" for="btn_FileInput" style="text-align:center;padding-left:20px;padding-top:7px;">No se eligió archivo</label>
+            @Html.TextBoxFor(model => model.Archivo,"Archivo",htmlAttributes:new{@class="form-control TextDark",@type="file",@style="border:none;display:none;",@placeholder="No se eligió archivo"})                           
     </div>
 </div>
 <div class="row">
@@ -46,3 +46,23 @@
         <button type="button" class="btn active-custom">ENVIAR</button>    
     </div>
 </div>
+
+@section scripts{
+    <script>
+        document.querySelector('#btn_FileInput').onclick = function(event) {
+            document.querySelector('#Archivo').click()
+        };
+
+
+        document.querySelector('#Archivo').addEventListener('change', function() {
+            var files = this.files;
+            if (!files.length) {
+                document.querySelector('label[for=btn_FileInput]').innerHTML= "No se eligió archivo";
+                return;
+            }
+            for (var i = 0, l = files.length; i < l; i++) {
+                document.querySelector('label[for=btn_FileInput]').innerHTML =files[i].name + '\n';
+            }
+        });
+    </script>
+}
