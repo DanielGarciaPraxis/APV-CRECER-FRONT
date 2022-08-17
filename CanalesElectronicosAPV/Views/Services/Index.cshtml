@@ -3,35 +3,30 @@
     ViewData["Title"] = "Services";
 }
 <br />
-@*<div class="row">
-    <div class="col-md-3 col-lg-4 col-xl-2">
-        <h4 class="Seleccionar">
-            Seleccionar Fondo:
-        </h4>
+<br />
+<div class="row">
+    <div class="col-md-9 col-lg-9 col-xl-9 col-sm-6" > 
+        <partial name="~/Views/Partials/_ComboFondo.cshtml" />
     </div>
-    <div class="col-md-4">
-        <div class="dropdown">
-            <button class="dropdown-toggle select-fondo" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                FONDO CRECER BALANCEADO
-            </button>
+    <div class="col-md-3 col-lg-3 col-xl-3 col-sm-6">
+        <div class="row">
+            <div class="col-md-4 col-lg-4 col-xl-4">
+            <h4 class="Seleccionar">
+                Producto:
+            </h4>
         </div>
+        <div class="col-md-3 col-lg-3 col-xl-3 ">
+            <div class="dropdown">
+                <button class="dropdown-toggle select-fondo" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    PLAN DINÁMICO
+                </button>
+            </div>
+        </div> 
+        </div>                 
     </div>
-    <div class="col-md-1 col-lg-1 col-xl-1">
-        <h4 class="Seleccionar">
-            Producto:
-        </h4>
-    </div>
-    <div class="col-md-4">
-        <div class="dropdown">
-            <button class="dropdown-toggle select-fondo" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                PLAN DINÁMICO
-            </button>
-        </div>
-    </div>
-</div>*@
+</div>
 
 
-<partial name="~/Views/Partials/_ComboFondo.cshtml" />
 <br />
 <br />
 <div class="row">
@@ -127,14 +122,15 @@
 
 @section scripts{
     <script>
-$(function() {
-    $('.datepicker').datepicker({
-        format:'dd/mm/yyyy',
-        autoclose:true,
-        language:'es'
-    });
+        document.getElementById("btnGenerar").disabled = true; 
+        $(function() {
+            $('.datepicker').datepicker({
+                format:'dd/mm/yyyy',
+                autoclose:true,
+                language:'es'
+            });
 
-});
+        });
         $("#divfechas").hide();
         $("#divcarne").hide();
         $("#lbltitle").hide();
@@ -142,6 +138,7 @@ $(function() {
             if ($("#TipoServicio").val() == 1) {
                 $("#lbltitle").text("Estado de cuenta");
                 $("#btnGenerar").text("GENERAR");
+                $("#btnGenerar").prop('disabled', false);
                 $("#lbltitle").show();
                 $("#divfechas").show();
                 $("#divedocuenta").show();
@@ -151,6 +148,7 @@ $(function() {
                 $("#lbltitle").text("Extracto de saldo");
                 $("#lbltitle").show();
                 $("#btnGenerar").text("GENERAR");
+                $("#btnGenerar").prop('disabled', false);
                 $("#divfechas").show();
                 $("#divedocuenta").hide();
                 $("#divextractosaldo").show();
@@ -159,15 +157,35 @@ $(function() {
                 $("#lbltitle").text("Carné");
                 $("#lbltitle").show();
                 $("#btnGenerar").text("DESCARGAR");
+                $("#btnGenerar").prop('disabled', false);
                 $("#divfechas").hide();
                 $("#divedocuenta").hide();
                 $("#divextractosaldo").hide();
                 $("#divcarne").show();
             } else {
                 $("#btnGenerar").text("GENERAR");
+                $("#btnGenerar").prop('disabled', true);
                 $("#divfechas").hide();
                 $("#divcarne").hide();
                 $("#lbltitle").hide();
+            }
+        });
+    
+        //cambia el tamaño al combo de seleccionar
+        document.addEventListener("DOMContentLoaded", () => {
+           let divsele = document.getElementById("divSeleccionar");
+            if (screen.width > 912) {
+                divsele.style.width = "22.2%";
+            } else {
+                divsele.removeAttribute('style');
+            }
+        });
+        window.addEventListener("resize", function() {
+            let divsele = document.getElementById("divSeleccionar");
+            if (screen.width > 912) {
+                divsele.style.width = "22.2%";
+            } else {
+                divsele.removeAttribute('style');
             }
         });
     </script>

@@ -435,12 +435,31 @@
         document.addEventListener("DOMContentLoaded", () => {
            const collection = document.getElementsByClassName("accordion-collapse");
             for (let button of collection) {
-                if (button.classList.contains("show")) {
-                    button.parentNode.children[0].children[0].classList.add("accordion-button_custom_active");
-                } else {
-                     button.parentNode.children[0].children[0].classList.remove("accordion-button_custom_active");
+                if (screen.width > 820) {
+                    if (button.classList.contains("show")) {
+                        button.parentNode.children[0].children[0].classList.add("accordion-button_custom_active");
+                    } else {
+                        button.parentNode.children[0].children[0].classList.remove("accordion-button_custom_active");
+                    }
+                }else{
+                    if (button.classList.contains("show")) {
+                        button.classList.remove("show");
+                        button.parentNode.children[0].children[0].setAttribute("aria-expanded", "false");
+                        button.parentNode.children[0].children[0].classList.add("collapsed");
+
+                    }
+                    if (button.parentNode.children[0].children[0].classList.contains("accordion-button_custom_active")) {
+                        button.parentNode.children[0].children[0].classList.remove("accordion-button_custom_active");
+                    }
+                    button.parentNode.children[0].children[0].classList.remove("accordion-button_custom");
                 }
             }
+             if (screen.width > 820) {
+                    document.getElementById("collapseHome").classList.add("show");
+                    document.getElementById("collapseHome").parentNode.children[0].children[0].classList.add("accordion-button_custom_active");
+                    document.getElementById("collapseHome").parentNode.children[0].children[0].classList.remove("collapsed");
+                    document.getElementById("collapseHome").parentNode.children[0].children[0].setAttribute("aria-expanded", "true");
+             }
         });
 
         window.addEventListener("resize", function() {
@@ -448,17 +467,21 @@
             for (let button2 of collection2) {
                 if (button2.classList.contains("show")) {
                     button2.classList.remove("show");
+                    button2.parentNode.children[0].children[0].setAttribute("aria-expanded","false");
+                    button2.parentNode.children[0].children[0].classList.add("collapsed");
+
                 } 
                 if (button2.parentNode.children[0].children[0].classList.contains("accordion-button_custom_active")) {
                     button2.parentNode.children[0].children[0].classList.remove("accordion-button_custom_active");
                 }
                 button2.parentNode.children[0].children[0].classList.remove("accordion-button_custom");
-
             }   
             if (screen.width > 820) {
                 document.getElementById("collapseHome").classList.add("show");
                 document.getElementById("collapseHome").parentNode.children[0].children[0].classList.add("accordion-button_custom_active");
-            }
+                document.getElementById("collapseHome").parentNode.children[0].children[0].classList.remove("collapsed");
+                document.getElementById("collapseHome").parentNode.children[0].children[0].setAttribute("aria-expanded", "true");
+            } 
         });
 
         document.querySelector("#accordionproductos").addEventListener('show.bs.collapse', function(e) {
